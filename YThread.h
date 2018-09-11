@@ -1,7 +1,9 @@
-#ifndef YAN_BASE_THREAD_H
-#define YAN_BASE_THREAD_H
+#ifndef YBASE_THREAD_H
+#define YBASE_THREAD_H
 
-#include "Atomic.h"
+#include "YAtomic.h"
+#include "YCountDownLatch.h"
+#include "YTypes.h"
 
 #include <boost/function.hpp>
 #include <boost/noncopyable.hpp>
@@ -22,18 +24,21 @@ namespace YBASE
         void join();
 
         bool started() const {return started_;}
-        pid_t tid() const {return *tid_;}
+        pid_t tid() const {return tid_;}
+        const string& name() const {return name_;}
+        static int numCreated() {return numCreated_.get();}
 
     private:
-        bool started_;
-        bool joined_;
-        //pid_t用于表示进程号的类型
-        boost::shared_ptr<pid_t> tid_;
-        pthread_t pthreadId_;
-        ThreadFunc func_;
-        std::string name_;
+        void setDefaultName();
 
-        static AtomicInt32 numCreated_;
+        bool                started_;
+        bool                joined_;
+        pthread_t           pthreadId_;
+        pid_t               tid_;
+        ThreadFunc          func_;
+        std::string         name_;
+        CountDownLatch      latch_;
+        static AtomicInt32  numCreated_;
     };
 }
 

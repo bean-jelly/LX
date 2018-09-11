@@ -1,7 +1,7 @@
 #ifndef YAN_BASE_MUTEX_H
 #define YAN_BASE_MUTEX_H
 
-#include "CurrentThread.h"
+#include "YCurrentThread.h"
 #include <boost/noncopyable.hpp>
 #include <assert.h>
 #include <pthread.h>

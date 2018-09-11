@@ -1,5 +1,5 @@
-#ifndef MUDUO_BASE_CURRENTTHREAD_H
-#define MUDUO_BASE_CURRENTTHREAD_H
+#ifndef YBASE_CURRENTTHREAD_H
+#define YBASE_CURRENTTHREAD_H
 
 #include <stdint.h>
 
@@ -9,7 +9,7 @@
 线程pid: syscall(SYS_gettid)    //系统内是唯一的
 */
 
-namespace muduo
+namespace YBASE
 {
     namespace CurrentThread
     {
