@@ -29,6 +29,8 @@ __END_DECLS
 
 #endif  // CHECK_PTHREAD_RETURN_VALUE
 
+//以下两个类均不提供拷贝构造函数
+
 namespace YBASE
 {
     class MutexLock : boost::noncopyable
@@ -56,13 +58,13 @@ namespace YBASE
             assert(isLockedByThisThread());
         }
 
-        void lock()
+        void lock()                             //仅供MutexLockGuard调用
         {
             MCHECK(pthread_mutex_lock(&mutex_));
             assignHolder();
         }
 
-        pthread_mutex_t* getPthreadMutex()
+        pthread_mutex_t* getPthreadMutex()      //仅供Condition调用，严禁用户代码调用
         {
             return &mutex_;
         }
@@ -114,6 +116,8 @@ namespace YBASE
     };
 }
 
+//该宏是为了防止程序里出现MutexLockGuard(mutex)的错误编写情况
+//如MutexLockGuard(mutex) ，应该为MutexLockGuard lock(mutex)
 #define MutexLockGuard(x) error "Missing guard object name"
 
 #endif
