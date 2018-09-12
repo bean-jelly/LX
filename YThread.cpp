@@ -1,5 +1,13 @@
-#include "Thread.h"
+#include "YThread.h"
+#include "YCurrentThread.h"
+#include "YException.h"
+
+#include <boost/static_assert.hpp>
+#include <boost/type_traits/is_same.hpp>
 #include <boost/weak_ptr.hpp>
+
+#include <errno.h>
+#include <stdio.h>
 #include <unistd.h>         //unix类系统定义符号常量的头文件，也包含了read(),write(),geepid(),sleep(),fork()等
 #include <sys/prctl.h>      //进程相关
 #include <sys/syscall.h>    //syscall()执行一个系统调用，根据指定的参数number和所有系统调用的汇编语言接口来确定调用哪个系统调用。
@@ -14,12 +22,26 @@
 
 namespace YBASE
 {
-     namespace CurrentThread
+    namespace CurrentThread
     {
-        pid_t tid();
-        const char* name();
-        bool isMainThread();
-        __thread const char* t_threadName = "unknown";
+        __thread int t_cachedTid = 0;
+        __thread char t_tidString[32];
+        __thread int t_tidStringLength = 6;
+        __thraed const char* t_threadName = "unknown";
+        const bool sameType = boost::is_same<int, pid_t>::value;
+    }
+
+    namespace detail
+    {
+        pid_t gettid()
+        {
+            return static_cast<pid_t>(::sys_gettid());
+        }
+        
+        void afterFork()
+        {
+            YBASE::CurrentThread
+        }
     }
 
     //缓存线程的真实唯一ID
@@ -35,6 +57,7 @@ namespace YBASE
     {
         t_cachedTid = gettid();
         YBASE::CurrentThread::t_threadName = "main";
+        CurrentThread::tid();
     }
 
     class ThreadNameInitializer
@@ -48,6 +71,7 @@ namespace YBASE
             child fork返回之前在子进程环境中调用，在这里unlock prepare获得的锁；
             parent fork创建了子进程以后，但在fork返回之前在父进程的进程环境中调用的，在这里对prepare获得的锁进行解锁；
             */
+            CurrentThread::tid();
             pthread_atfork(NULL, NULL, &afterFork);
         }
     };
@@ -59,20 +83,36 @@ namespace YBASE
         typedef YBASE::Thread::ThreadFunc ThreadFunc;
         ThreadFunc func_;
         std::string name_;
-        boost::weak_ptr<pid_t> wkTid_;
+        pid_t* tid_;
+        CountDownLatch* latch_;
 
         ThreadData(const ThreadFunc& func,
                    const std::string& name,
-                   const boost::shared_ptr<pid_t>& tid)
+                   pid_t* tid,
+                   CountDownLatch* latch)
             :func_(func),
              name_(name),
-             wkTid_(tid){}
+             tid_(tid),
+             latch_(latch){}
 
         void runInThread()
         {
             pid_t tid = YBASE::CurrentThread::tid();
-            //lock()获取shared_ptr<pid_t>
-            boost::shared_ptr<pid_t> ptid = wkTid_.lock();
+            tid_ = NULL;
+            latch_->countDown();
+            latch_ = NULL;
+
+            YBASE::CurrentThread::t_threadName = name_.empty() ? "YThread" : name_.c_str();
+            ::prctl(PR_SET_NAME,YBASE::CurrentThread::t_threadName);
+            try{
+                func_();
+                YBASE::CurrentThread::t_threadName = "finished";
+            }
+            catch(const Exception& ex)
+            {
+                YBASE::CurrentThread::t_threadName = "crashed";
+                fprintf(st)
+            }
 
             if(ptid)
             {

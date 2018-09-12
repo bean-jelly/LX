@@ -1,6 +1,11 @@
 #ifndef YBASE_SINGLETON_H
 #define YBASE_SINGLETON_H
 
+/*
+生产代码中的线程的等待可分为两种，一种是等待资源可用；一种是等待进入临界区（mutex上）以便读写数据，
+通常后一种等待时间极短。
+*/
+
 #include <boost/noncopyable.hpp>
 #include <assert.h>
 #include <stdlib.h>
@@ -29,11 +34,13 @@ namespace YBASE
     public:
         static T& instance()
         {
+            //只能调用一次init()
             pthread_once(&ponce_, &Singleton::init);
             assert(value != NULL);
             return *value_;
         }
     private:
+        //将构造函数和析构函数设为private，则只能用instance()进行初始化
         Singleton();
         ~Singleton();
 

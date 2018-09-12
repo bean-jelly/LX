@@ -64,6 +64,12 @@ namespace YBASE
             assignHolder();
         }
 
+        void unlock()
+        {
+            unassignHolder();
+            MCHECK(pthread_mutex_unlock(&mutex_));
+        }
+
         pthread_mutex_t* getPthreadMutex()      //仅供Condition调用，严禁用户代码调用
         {
             return &mutex_;
@@ -107,7 +113,7 @@ namespace YBASE
         {
             mutex_.lock();
         }
-        ~MutexLockGuard (Hidden)
+        ~MutexLockGuard ()
         {
             mutex_.unlock();
         }
