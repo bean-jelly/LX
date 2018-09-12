@@ -104,26 +104,26 @@ namespace YBASE
 
             YBASE::CurrentThread::t_threadName = name_.empty() ? "YThread" : name_.c_str();
             ::prctl(PR_SET_NAME,YBASE::CurrentThread::t_threadName);
-            try{
+            try
+            {
                 func_();
                 YBASE::CurrentThread::t_threadName = "finished";
             }
             catch(const Exception& ex)
             {
                 YBASE::CurrentThread::t_threadName = "crashed";
-                fprintf(st)
+                abort();
             }
-
-            if(ptid)
+            catch(const std::exception& ex)
             {
-                *ptid = tid;
-                ptid.reset();
+                YBASE::CurrentThread::t_threadName = "crashed";
+                abort();
             }
-
-            YBASE::CurrentThread::t_threadName = name_.empty() ? "YThread" : name_.c_str();
-            //设置进程名称
-            ::prctl(PR_SET_NAME, YBASE::CurrentThread::t_threadName);
-            YBASE::CurrentThread::t_threadName = "finished";
+            catch(...)
+            {
+                YBASE::CurrentThread::t_threadName = "crashed";
+                throw;
+            }
         }
     };
 
@@ -138,23 +138,26 @@ namespace YBASE
 
 using namespace YBASE;
 
-pid_t CurrentThread::tid()
+void CurrentThread::cacheTid()
 {
     if(t_cachedTid == 0)
     {
-        t_cachedTid = gettid();
+        t_cachedTid = detail::gettid();
+        t_tidStringLength = snprintf(t_tidString, sizeof t_tidString, "%5d ", t_cachedTid);
     }
-    return t_cachedTid;
-}
-
-const char* CurrentThread::name()
-{
-    return t_threadName;
 }
 
 bool CurrentThread::isMainThread()
 {
     return tid() == ::getpid();
+}
+
+void CurrentThread::sleepUsec(int64_t usec)
+{
+    struct timespaec ts = {0, 0};
+    ts.tv_sec = static_cast<time_t>(usec / Timestamp::kMicroSecondsPerSecond);
+    ts.tv_nsec = static_cast<long>(usec % Timestamp::kMicroSecondsPerSecond * 1000);
+    ::nanosleep(&ts, NULL);
 }
 
 AtomicInt32 Thread::numCreated_;
