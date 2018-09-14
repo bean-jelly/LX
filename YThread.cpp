@@ -31,10 +31,10 @@ namespace YBASE
 {
     namespace CurrentThread
     {
-        t_cachedTid = 0;
-        t_tidString[32];
-        int t_tidStringLength = 6;
-        t_threadName = "unknown";
+        __thread int t_cachedTid = 0;
+        __thread char t_tidString[32];
+        __thread int t_tidStringLength = 6;
+        __thread const char* t_threadName = "unknown";
         const bool sameType = boost::is_same<int, pid_t>::value;
     }
 
@@ -197,7 +197,7 @@ void Thread::start()
     started_ = true;
 
     detail::ThreadData* data = new detail::ThreadData(func_, name_, &tid_, &latch_);
-    if(pthreadId_(boost::bind(&detail::startThread, data));
+    if(pthreadId_(boost::bind(&detail::startThread, data)));
     {
         started_ = false;
         delete data;
