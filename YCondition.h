@@ -42,3 +42,5 @@ namespace YBASE
         pthread_cond_t pcond_;
     };
 }
+
+#endif

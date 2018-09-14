@@ -8,7 +8,7 @@
 #include <boost/function.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/shared_ptr.hpp>
-#include <pthread.h>
+#include <boost/thread.hpp>
 #include <string>
 
 namespace YBASE
@@ -33,7 +33,7 @@ namespace YBASE
 
         bool                started_;
         bool                joined_;
-        pthread_t           pthreadId_;
+        boost::thread       pthreadId_;
         pid_t               tid_;
         ThreadFunc          func_;
         std::string         name_;

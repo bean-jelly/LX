@@ -9,6 +9,9 @@
 线程pid: syscall(SYS_gettid)    //系统内是唯一的
 */
 
+#define LIKELY(x)     __builtin_expect(!!(x), 1) //x很可能为真
+#define UNLIKELY(x)   __builtin_expect(!!(x), 0) //x很可能为假
+
 namespace YBASE
 {
     namespace CurrentThread
@@ -22,10 +25,7 @@ namespace YBASE
 
         inline int tid()
         {
-            if(__builtin_expect(t_cachedTid == 0, 0))
-            {
-                cacheTid();
-            }
+            cacheTid();
             return t_cachedTid;
         }
 

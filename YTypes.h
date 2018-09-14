@@ -5,7 +5,7 @@
 #include <string>
 
 #ifndef NDEBUG
-#include <assert.t>
+#include <assert.h>
 #endif
 
 namespace YBASE
@@ -25,10 +25,6 @@ namespace YBASE
         {
             implicit_cast<From*, To>(0);
         }
-
-        #if !defined(NDEBUG) && !define(GOOGLE_PROTOBUF_NO_RTTI)
-        assert(f == NULL || dynamic_cast<To>(f) != NULL);
-        #endif
         return static_cast<To>(f);
     }
 }
