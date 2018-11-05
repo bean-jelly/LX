@@ -1,6 +1,7 @@
 #ifndef YBASE_CURRENTTHREAD_H
 #define YBASE_CURRENTTHREAD_H
 
+#include "YTypes.h"
 #include <stdint.h>
 
 /*

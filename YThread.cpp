@@ -26,27 +26,17 @@
 线程tid: pthread_self()         //进程内唯一，但是在不同进程则不唯一。
 线程pid: syscall(SYS_gettid)    //系统内是唯一的
 */
-
 namespace YBASE
 {
-    namespace CurrentThread
-    {
-        __thread int t_cachedTid = 0;
-        __thread char t_tidString[32];
-        __thread int t_tidStringLength = 6;
-        __thread const char* t_threadName = "unknown";
-        const bool sameType = boost::is_same<int, pid_t>::value;
-    }
-
     namespace detail
     {
         pid_t gettid()
         {
-            //#ifndef __linux__
+            #ifndef __linux__
             return static_cast<pid_t>(GetCurrentThreadId());
-            //#else
-            //return static_cast<pid_t>(::sys_gettid());
-            //#endif
+            #else
+            return static_cast<pid_t>(::syscall(SYS_gettid));
+            #endif
         }
         
         //parent fork创建了子进程以后，但在fork返回之前在父进程的进程环境中调用的
@@ -83,14 +73,8 @@ namespace YBASE
             pid_t* tid_;
             CountDownLatch* latch_;
 
-            ThreadData(const ThreadFunc& func,
-                    const std::string& name,
-                    pid_t* tid,
-                    CountDownLatch* latch)
-                :func_(func),
-                name_(name),
-                tid_(tid),
-                latch_(latch){}
+            ThreadData(const ThreadFunc& func, const std::string& name, pid_t* tid, CountDownLatch* latch)
+                :func_(func), name_(name), tid_(tid), latch_(latch){}
 
             void runInThread()
             {
@@ -134,8 +118,6 @@ namespace YBASE
     }
 }
 
-using namespace YBASE;
-
 void CurrentThread::cacheTid()
 {
     if(t_cachedTid == 0)
@@ -161,13 +143,7 @@ void CurrentThread::sleepUsec(int64_t usec)
 AtomicInt32 Thread::numCreated_;
 
 Thread::Thread(const ThreadFunc& func, const std::string& n)
-:started_(false),
- joined_(false),
- pthreadId_(0),
- tid_(new pid_t(0)),
- func_(func),
- name_(n),
- latch_(1)
+:started_(false), joined_(false), pthreadId_(0), tid_(new pid_t(0)), func_(func), name_(n), latch_(1)
 {
     setDefaultName();
 }
@@ -197,7 +173,7 @@ void Thread::start()
     started_ = true;
 
     detail::ThreadData* data = new detail::ThreadData(func_, name_, &tid_, &latch_);
-    if(pthreadId_(boost::bind(&detail::startThread, data)));
+    if(pthread_create(&pthreadId_, NULL, &detail::startThread, data))
     {
         started_ = false;
         delete data;
@@ -206,6 +182,7 @@ void Thread::start()
     else
     {
         latch_.wait();
+        assert(tid_ > 0);
     }
 }
 

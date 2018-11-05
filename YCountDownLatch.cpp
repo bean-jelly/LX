@@ -19,7 +19,7 @@ void CountDownLatch::wait()
 void CountDownLatch::countDown()
 {
     MutexLockGuard lock(mutex_);
-    --count;
+    --count_;
     if(count_ == 0)
     {
         condition_.notifyAll();

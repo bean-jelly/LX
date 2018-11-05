@@ -2,7 +2,7 @@
 #define YAN_BASE_MUTEX_H
 
 #include "YCurrentThread.h"
-#include <boost/noncopyable.hpp>
+#include "Ynoncopyable.h"
 #include <assert.h>
 #include <pthread.h>
 
@@ -10,7 +10,7 @@
 
 #ifdef NDEBUG
 __BEGIN_DECLS
-extern void __assert_perror_fail(int errnum,
+extern void __assert_perror_fail(int errnum,`
                                  const char* file,
                                  unsigned int line,
                                  const char* function)
@@ -33,7 +33,7 @@ __END_DECLS
 
 namespace YBASE
 {
-    class MutexLock : boost::noncopyable
+    class MutexLock : noncopyable
     {
     public:
         MutexLock() : holder_(0)
@@ -76,7 +76,7 @@ namespace YBASE
         }
     private:
         friend class Condition;
-        class UnassignGuard:boost::noncopyable
+        class UnassignGuard : noncopyable
         {
         public:
             UnassignGuard(MutexLock& owner) : owner_(owner)
@@ -106,7 +106,7 @@ namespace YBASE
         pid_t holder_;
     };
 
-    class MutexLockGuard:boost::noncopyable
+    class MutexLockGuard : noncopyable
     {
     public:
         explicit MutexLockGuard(MutexLock& mutex):mutex_(mutex)

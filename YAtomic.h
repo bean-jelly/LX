@@ -1,7 +1,7 @@
 #ifndef YAN_BASE_ATOMIC_H
 #define YAN_BASE_ATOMIC_H
 
-#include <boost/noncopyable.hpp>
+#include "Ynoncopyable.h"
 #include <stdint.h>
 
 namespace YBASE
@@ -9,7 +9,7 @@ namespace YBASE
     namespace detail
     {
         template<typename T>
-        class AtomicIntegerT:boost::noncopyable
+        class AtomicIntegerT:noncopyable
         {
         public:
             AtomicIntegerT() : value_(0){}

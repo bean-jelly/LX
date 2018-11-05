@@ -5,18 +5,17 @@
 #include "YCountDownLatch.h"
 #include "YTypes.h"
 
-#include <boost/function.hpp>
-#include <boost/noncopyable.hpp>
-#include <boost/shared_ptr.hpp>
-#include <boost/thread.hpp>
+#include <functional>
+#include <memory>
+#include <pthread.h>
 #include <string>
 
 namespace YBASE
 {
-    class Thread : boost::noncopyable
+    class Thread : noncopyable
     {
     public:
-        typedef boost::function<void()> ThreadFunc;
+        typedef std::function<void()> ThreadFunc;
         explicit Thread(const ThreadFunc&, const std::string& name = std::string());
         ~Thread();
 
@@ -25,7 +24,7 @@ namespace YBASE
 
         bool started() const {return started_;}
         pid_t tid() const {return tid_;}
-        const string& name() const {return name_;}
+        const std::string& name() const {return name_;}
         static int numCreated() {return numCreated_.get();}
 
     private:
@@ -33,7 +32,7 @@ namespace YBASE
 
         bool                started_;
         bool                joined_;
-        boost::thread       pthreadId_;
+        pthread_t           pthreadId_;
         pid_t               tid_;
         ThreadFunc          func_;
         std::string         name_;

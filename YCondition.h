@@ -2,12 +2,11 @@
 #define YBASE_CONDITION_H
 
 #include "YMutex.h"
-#include <boost/noncopyable.hpp>
 #include <pthread.h>
 
 namespace YBASE
 {
-    class Condition:boost::noncopyable
+    class Condition : noncopyable
     {
     public:
         explicit Condition(MutexLock& mutex) : mutex_(mutex)

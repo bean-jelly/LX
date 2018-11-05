@@ -3,22 +3,22 @@
 
 #include "YCondition.h"
 #include "YMutex.h"
-#include <boost/noncopyable.hpp>
+#include "Ynoncopyable.h"
 
 namespace YBASE
 {
-    class CountDownLatch:boost::noncopyable
+    class CountDownLatch : noncopyable
     {
     public:
-        explicit CountDownLatch(int count);
-        void wait();
-        void countDown();
-        int getCount() const;
+        explicit    CountDownLatch(int count);
+        void        wait();
+        void        countDown();
+        int         getCount() const;
 
     private:
-        mutable MutexLock mutex_;
-        Condition condition;
-        int count_;    
+        mutable     MutexLock mutex_;
+        Condition   condition;
+        int         count_;    
     };
 }
 
