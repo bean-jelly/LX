@@ -2,7 +2,7 @@
 #define YAN_BASE_MUTEX_H
 
 #include "YCurrentThread.h"
-#include "Ynoncopyable.h"
+#include "YNoncopyable.h"
 #include <assert.h>
 #include <pthread.h>
 

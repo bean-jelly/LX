@@ -1,25 +1,22 @@
 #include "YThread.h"
 #include "YCurrentThread.h"
 #include "YException.h"
+#include "Logging.h"
 
 #include <boost/static_assert.hpp>
 #include <boost/type_traits/is_same.hpp>
 #include <boost/weak_ptr.hpp>
 #include <boost/thread.hpp>
 
+#include <iostream>
 #include <errno.h>
 #include <stdio.h>
 #include <unistd.h>         //unix类系统定义符号常量的头文件，也包含了read(),write(),geepid(),sleep(),fork()等
 #include <sys/types.h>      //unix/Linux系统的基本系统数据类型的头文件，含有size_t，time_t，pid_t等类型
-
-#include <iostream>
-
-//#ifndef __linux__
 #include <windows.h>
-//else
-//#include <sys/prctl.h>      //进程相关
-//#include <sys/syscall.h>    //syscall()执行一个系统调用，根据指定的参数number和所有系统调用的汇编语言接口来确定调用哪个系统调用。
-//#endif
+#include <linux/unistd.h>
+#include <sys/prctl.h>      //进程相关
+#include <sys/syscall.h>    //syscall()执行一个系统调用，根据指定的参数number和所有系统调用的汇编语言接口来确定调用哪个系统调用。
 
 /*
 进程pid: getpid()                 
@@ -117,6 +114,8 @@ namespace YBASE
         }
     }
 }
+
+using namespace YBASE;
 
 void CurrentThread::cacheTid()
 {
