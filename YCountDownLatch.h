@@ -3,7 +3,7 @@
 
 #include "YCondition.h"
 #include "YMutex.h"
-#include "Ynoncopyable.h"
+#include "YNoncopyable.h"
 
 namespace YBASE
 {

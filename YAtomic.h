@@ -1,7 +1,7 @@
 #ifndef YAN_BASE_ATOMIC_H
 #define YAN_BASE_ATOMIC_H
 
-#include "Ynoncopyable.h"
+#include "YNoncopyable.h"
 #include <stdint.h>
 
 namespace YBASE
