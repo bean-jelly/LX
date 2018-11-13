@@ -1,3 +1,6 @@
+#ifndef R_EVENT_H
+#define R_EVENT_H
+
 typedef unsigned int Event;
 
 enum EventMask{
@@ -6,3 +9,5 @@ enum EventMask{
     ErrorEvent = 0x04,
     EventMask = 0xFF
 };
+
+#endif

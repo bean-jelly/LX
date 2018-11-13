@@ -1,3 +1,6 @@
+#ifndef R_EVENTDE_H
+#define R_EVENTDE_H
+
 #include "event.h"
 #include "event_handler.h"
 #include <map>
@@ -11,3 +14,5 @@ public:
     virtual int regist(Handle handle, Event evt)=0;
     virtual int remove(Handle handle)=0;
 };
+
+#endif

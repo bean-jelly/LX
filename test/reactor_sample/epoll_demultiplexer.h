@@ -1,3 +1,6 @@
+#ifndef R_EPOLLDE_H
+#define R_EPOLLDE_H
+
 #include "event_handler.h"
 #include "event_demultiplexer.h"
 #include <map>
@@ -12,5 +15,7 @@ public:
     virtual int remove(Handle handle);
 private:
     int _max_fd;
-    int _poll_fd;
+    int _epoll_fd;
 };
+
+#endif

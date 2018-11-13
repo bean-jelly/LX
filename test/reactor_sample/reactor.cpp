@@ -12,7 +12,7 @@ Reactor& Reactor::get_instance()
 Reactor::Reactor()
 {
     _reactor_impl = new (std::nothrow) ReactorImpl();
-    assert(_reactor_impl != NULL);
+    //assert(_reactor_impl != null);
 }
 
 Reactor::~Reactor()

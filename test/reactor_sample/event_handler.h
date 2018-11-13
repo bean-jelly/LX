@@ -1,3 +1,6 @@
+#ifndef R_EVENTHANDLER_H
+#define R_EVENTHANDLER_H
+
 typedef int Handle;
 
 class EventHandler
@@ -10,3 +13,5 @@ public:
     virtual void handle_write() = 0;
     virtual void handle_error() = 0;
 };
+
+#endif

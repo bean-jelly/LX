@@ -36,7 +36,7 @@ void SocketHandler::handle_write()
     
 }
 
-void SocketHandler::handle_error (Hidden){
+void SocketHandler::handle_error (){
     Reactor &r = Reactor::get_instance();
     r.remove(this);
 }

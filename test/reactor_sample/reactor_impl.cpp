@@ -34,7 +34,7 @@ int ReactorImpl::regist(EventHandler* handler, Event evt)
     return _demultiplexer->regist(handle, evt);
 }
 
-void ReactorImpl::remove(Eventhandler* handler)
+void ReactorImpl::remove(EventHandler* handler)
 {
     int handle = handler->get_handle();
     _demultiplexer->remove(handle);

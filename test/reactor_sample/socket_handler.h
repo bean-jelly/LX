@@ -1,3 +1,6 @@
+#ifndef R_SOCKETHANDLER_H
+#define R_SOCKETHANDLER_H
+
 #include "event_handler.h"
 #include "event.h"
 
@@ -15,6 +18,8 @@ public:
     virtual void handle_error();
 private:
     Handle _socket_fd;
-    char* buf;
+    char* _buf;
     static const int MAX_SIZE = 1024;
 };
+
+#endif

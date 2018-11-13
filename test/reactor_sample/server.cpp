@@ -5,13 +5,12 @@
 #include "reactor.h"
 #include "event_handler.h"
 #include "listen_handler.h"
-#include "event.h"
 
 int main() {
     int listenfd = -1;
     if ((listenfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         std::cerr << "socket error " << errno << std::endl;
-        exit(-1);
+        return -1;
     }
 
     struct sockaddr_in seraddr;
@@ -21,12 +20,12 @@ int main() {
 
     if (bind(listenfd, (struct sockaddr*)&seraddr, sizeof(seraddr)) < 0) {
         std::cerr << "bind error " << errno << std::endl;
-        exit(-2);
+        return -2;
     }
 
     if (listen(listenfd, 5) < 0) {
         std::cerr << "listen error " << errno << std::endl;
-        exit(-3);
+        return -3;
     }
 
     Reactor& actor = Reactor::get_instance();

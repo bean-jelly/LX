@@ -42,7 +42,7 @@ int EpollDemultiplexer::wait_event(std::map<Handle, EventHandler*>& handlers, in
         Handle handle = events[i].data.fd;
         if((EPOLLHUP|EPOLLERR) & events[i].events)
         {
-            assert(handler[handle]) != handle_error();
+            assert(handlers[handle]) != handle_error();
         }
         else
         {

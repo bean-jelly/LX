@@ -1,3 +1,6 @@
+#ifndef R_LISTEN_H
+#define R_LISTEN_H
+
 #include "event_handler.h"
 #include "event.h"
 
@@ -16,3 +19,5 @@ public:
 private:
     Handle _listen_fd;
 };
+
+#endif
