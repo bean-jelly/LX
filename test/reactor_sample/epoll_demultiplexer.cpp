@@ -31,6 +31,7 @@ int EpollDemultiplexer::wait_event(std::map<Handle, EventHandler*>& handlers, in
     //_max_fd为回传事件数组的最大值
     //timeout是超时返回,-1表示阻塞,0表示非阻塞,>0表示超时时间
     //返回值表示返回事件的多少
+    //events是一个vector,原来容器是可以这样用，直接赋值首个元素的地址
     int num = epoll_wait(_epoll_fd, &events[0], _max_fd, timeout);
     if(num < 0)
     {

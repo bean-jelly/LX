@@ -43,7 +43,7 @@ int main()
     close(socketfd);
     return 0;
 
-    Reactor& actor = Reactor::get_instance();
+    /*Reactor& actor = Reactor::get_instance();
     EventHandler* handler = new ListenHandler(socketfd);
     actor.regist(handler, ReadEvent);
 
@@ -52,5 +52,5 @@ int main()
         std::cout << "client one loop" << std::endl;
     }
 
-    return 0;
+    return 0;*/
 }

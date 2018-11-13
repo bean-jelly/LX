@@ -4,6 +4,7 @@
 
 class ReactorImpl;
 
+//注册，管理，分配
 class Reactor
 {
 public:

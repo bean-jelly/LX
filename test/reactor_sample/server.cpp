@@ -35,7 +35,7 @@ int main() {
 
     while(true) {
         actor.dispatch(100);
-        //std::cout << "one loop" << std::endl;
+        std::cout << "one loop" << std::endl;
     }
 
     return 0;
