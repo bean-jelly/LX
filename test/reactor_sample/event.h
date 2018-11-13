@@ -1,6 +1,8 @@
 #ifndef R_EVENT_H
 #define R_EVENT_H
 
+#include <unistd.h>
+
 typedef unsigned int Event;
 
 enum EventMask{
