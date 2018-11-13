@@ -3,6 +3,8 @@
 #include <sys/socket.h>
 #include <iostream>
 #include <errno.h>
+#include <string.h>
+#include <stdlib.h>
 #include "reactor.h"
 #include "event_handler.h"
 #include "listen_handler.h"

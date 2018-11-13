@@ -1,6 +1,9 @@
 #ifndef R_EVENTHANDLER_H
 #define R_EVENTHANDLER_H
 
+#include <unistd.h>
+#include <assert.h>
+
 typedef int Handle;
 
 class EventHandler

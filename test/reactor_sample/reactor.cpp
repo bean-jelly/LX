@@ -33,3 +33,8 @@ void Reactor::dispatch(int timeout)
 {
     return _reactor_impl->dispatch(timeout);
 }
+
+void Reactor::remove(EventHandler* handler)
+{
+    return _reactor_impl->remove(handler);
+}
