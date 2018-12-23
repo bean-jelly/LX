@@ -75,7 +75,7 @@ void TimerManager::RemoveTimer(Timer* timer)
 void TimerManager::DetectTimers()
 {
     unsigned long long now = GetCurrentMillisecs();
-    while(!heap_.empty() && m_heap[0].timme <= now)
+    while(!heap_.empty() && m_heap[0].time <= now)
     {
         Timer* timer = m_heap[0].timer;
         RemoveTimer(timer);
