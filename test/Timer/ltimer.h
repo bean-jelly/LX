@@ -1,6 +1,7 @@
 #ifndef LTIMER_H_
 #define LTIMER_H_
 
+#include <stdio.h>
 #include <vector>
 
 typedef void (*pFun)(void);
