@@ -1,6 +1,7 @@
 #ifndef _SINGLETON_H_
 #define _SINGLETON_H_
 
+//单例类模板
 template<class T>
 class Singleton
 {
