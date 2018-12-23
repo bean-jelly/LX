@@ -22,9 +22,9 @@ private:
     friend class        TimerManager;
     TimerManager&       m_manager;
     TimerType           m_timerType;
-    pFun                m_timerFun;
-    unsigned int        m_interval;
-    unsigned long long  m_expires;
+    pFun                m_timerFun;     //回调函数s
+    unsigned int        m_interval;     //时间间隔
+    unsigned long long  m_expires;      //响应时间
     size_t              m_heapIndex;
 };
 
