@@ -1,0 +1,92 @@
+﻿生成启动时间为 2018/12/22 16:59:10。
+     1>项目“E:\乐8游戏\dc_leba_game\trunk\Robot\Robot\Robot.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\comlib\basicsdk /I..\..\comlib\basicsdk\basictable /I..\..\comlib\basicsdk\basiccode /I..\..\comlib\basicsdk\basichttp /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\Robot.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\comlib\basicsdk /I..\..\comlib\basicsdk\basictable /I..\..\comlib\basicsdk\basiccode /I..\..\comlib\basicsdk\basichttp /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\comlib\basicsdk\basicbuffer\BasicTranscode.cpp ..\..\comlib\basicsdk\basicdump\basicdumpinterface.cpp ..\..\comlib\basicsdk\basictcp\basictcpinterface.cpp BasicBuffer.cpp BasicHttpContext.cpp basichttphelper.cpp gameloadhelper.cpp realplayercheck.cpp Robot.cpp RobotDlg.cpp RobotManager\useractionmanager.cpp RobotManager\usermanager.cpp tcp\tcpClientmanager.cpp usertask.cpp
+         usertask.cpp
+         tcpClientmanager.cpp
+         usermanager.cpp
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotmanager\usermanager.cpp(270): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotmanager\usermanager.cpp(348): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+         useractionmanager.cpp
+         RobotDlg.cpp
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(294): warning C4018: “<=”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(373): warning C4244: “=”: 从“wchar_t”转换到“char”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(377): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(385): warning C4244: “=”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(391): warning C4244: “=”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(424): warning C4307: “*”: 整型常量溢出
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(440): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(450): warning C4307: “*”: 整型常量溢出
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(628): warning C4018: “<=”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(754): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(769): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(792): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(807): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(811): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(819): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(832): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(836): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(857): warning C4244: “初始化”: 从“time_t”转换到“int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(863): warning C4244: “=”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(893): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(1164): warning C4307: “*”: 整型常量溢出
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(1165): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(1169): warning C4307: “*”: 整型常量溢出
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(1174): warning C4307: “*”: 整型常量溢出
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(1175): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(1194): warning C4307: “*”: 整型常量溢出
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(1207): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(1225): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(1342): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(1422): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\robotdlg.cpp(1491): warning C4018: “<”: 有符号/无符号不匹配
+         Robot.cpp
+         realplayercheck.cpp
+         gameloadhelper.cpp
+         basichttphelper.cpp
+         BasicHttpContext.cpp
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\basichttpcontext.cpp(68): warning C4018: “>”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\robot\robot\basichttpcontext.cpp(76): warning C4018: “<”: 有符号/无符号不匹配
+         BasicBuffer.cpp
+         basictcpinterface.cpp
+         basicdumpinterface.cpp
+         BasicTranscode.cpp
+         正在生成代码...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /l"0x0804" /IDebug\ /nologo /fo"Debug\Robot.res" Robot.rc 
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\Robot.exe" /INCREMENTAL /NOLOGO /LIBPATH:../../comlib/basicsdk/win32_lib/debug/ uafxcwd.lib /NODEFAULTLIB:uafxcwd.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\Robot.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\Robot.lib" /MACHINE:X86 Debug\Robot.res
+         Debug\BasicTranscode.obj
+         Debug\basicdumpinterface.obj
+         Debug\basictcpinterface.obj
+         Debug\BasicBuffer.obj
+         Debug\BasicHttpContext.obj
+         Debug\basichttphelper.obj
+         Debug\gameloadhelper.obj
+         Debug\realplayercheck.obj
+         Debug\Robot.obj
+         Debug\RobotDlg.obj
+         Debug\useractionmanager.obj
+         Debug\usermanager.obj
+         Debug\stdafx.obj
+         Debug\tcpClientmanager.obj
+         Debug\usertask.obj
+     1>basiccode.lib(json_reader.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(json_reader.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(json_value.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(json_value.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(json_writer.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(json_writer.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(BasicCriticalSection.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(BasicCriticalSection.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(BasicLoadHelper.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(BasicLoadHelper.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(BasicMutex.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(BasicMutex.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(BasicSemaphore.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(BasicSemaphore.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(BasicThreadPool.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(BasicThreadPool.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiclogs.lib(basiclogfilter.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiclogs.lib(basiclogfilter.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiclogs.lib(basiclogserver.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiclogs.lib(basiclogserver.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiclogs.lib(basicpathhelper.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiclogs.lib(basicpathhelper.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         Robot.vcxproj -> E:\乐8游戏\dc_leba_game\trunk\Robot\Debug\Robot.exe
+     1>已完成生成项目“E:\乐8游戏\dc_leba_game\trunk\Robot\Robot\Robot.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:26.95

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="basic">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="gameload">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="user">
+      <UniqueIdentifier>{893dbd24-5fed-4dcb-a820-4f943b49dc2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tcp">
+      <UniqueIdentifier>{ac1be5e2-9de2-418e-abdd-ab65d44a68d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="robortlogic">
+      <UniqueIdentifier>{cfb52d01-7cce-4e81-9df3-01cc6013b13a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\comlib\basicsdk\basictcp\basictcpinterface.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\BasicHttpContext.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basichttphelper.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="gamemain.cpp">
+      <Filter>gameload</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\tcp\tcpClientmanager.cpp">
+      <Filter>tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\user\useractionmanager.cpp">
+      <Filter>user</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\user\usermanager.cpp">
+      <Filter>user</Filter>
+    </ClCompile>
+    <ClCompile Include="game\gamelogic.cpp">
+      <Filter>robortlogic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gameloadhelper.cpp">
+      <Filter>gameload</Filter>
+    </ClCompile>
+    <ClCompile Include="game\robot_ai.cpp">
+      <Filter>robortlogic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\comlib\basicsdk\basictcp\basictcpinterface.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\BasicHttpContext.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basichttphelper.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+    <ClInclude Include="gamemain.h">
+      <Filter>gameload</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\user\useractionmanager.h">
+      <Filter>user</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\user\usermanager.h">
+      <Filter>user</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\tcp\tcpClientmanager.h">
+      <Filter>tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gamelogic.h">
+      <Filter>robortlogic</Filter>
+    </ClInclude>
+    <ClInclude Include="game\gamemsg.h">
+      <Filter>robortlogic</Filter>
+    </ClInclude>
+    <ClInclude Include="game\robotmsg.h">
+      <Filter>robortlogic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\gameloadhelper.h">
+      <Filter>gameload</Filter>
+    </ClInclude>
+    <ClInclude Include="game\robot_ai.h">
+      <Filter>robortlogic</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gamemain.def">
+      <Filter>gameload</Filter>
+    </None>
+  </ItemGroup>
+</Project>

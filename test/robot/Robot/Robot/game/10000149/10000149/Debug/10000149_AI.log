@@ -1,0 +1,57 @@
+﻿生成启动时间为 2018/12/22 9:22:16。
+     1>项目“E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\10000149\10000149_AI.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (20000149_AI.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\..\..\..\comlib\basicsdk\basictcp /I..\..\..\user /I..\..\..\..\..\comlib\basicsdk /I..\..\..\..\..\comlib\basicsdk\basiccode /I..\..\..\ /I..\..\ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDLL /D BASICGAME_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\..\..\comlib\basicsdk\basictcp\basictcpinterface.cpp ..\..\..\BasicHttpContext.cpp ..\..\..\basichttphelper.cpp ..\..\..\gameloadhelper.cpp ..\..\..\tcp\tcpClientmanager.cpp ..\..\..\user\useractionmanager.cpp ..\..\..\user\usermanager.cpp gamelogic.cpp gamemain.cpp mjdata.cpp
+         mjdata.cpp
+         gamemain.cpp
+         gamelogic.cpp
+     1>e:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\10000149\gamelogic.cpp(255): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\10000149\gamelogic.cpp(275): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\10000149\gamelogic.cpp(289): warning C4244: “=”: 从“INT64”转换到“unsigned int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\10000149\gamelogic.cpp(299): warning C4244: “=”: 从“INT64”转换到“unsigned int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\10000149\gamelogic.cpp(307): warning C4244: “=”: 从“INT64”转换到“unsigned int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\10000149\gamelogic.cpp(316): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\10000149\gamelogic.cpp(338): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+         usermanager.cpp
+     1>e:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\user\usermanager.cpp(270): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+     1>e:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\user\usermanager.cpp(348): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+         useractionmanager.cpp
+         tcpClientmanager.cpp
+         gameloadhelper.cpp
+         basichttphelper.cpp
+         BasicHttpContext.cpp
+     1>e:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\basichttpcontext.cpp(68): warning C4018: “>”: 有符号/无符号不匹配
+     1>e:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\basichttpcontext.cpp(76): warning C4018: “<”: 有符号/无符号不匹配
+         basictcpinterface.cpp
+         正在生成代码...
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1193,5): warning MSB8012: TargetPath(E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\10000149_AI.dll) does not match the Linker's OutputFile property value (E:\乐8游戏\dc_leba_game\trunk\clientdemo\Debug\10000149_AI.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../../../../Debug/10000149_AI.dll" /INCREMENTAL /NOLOGO /LIBPATH:..\..\..\..\..\comlib\basicsdk\win32_lib\debug\ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib uafxcwd.lib LIBCMTD.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:LIBCMTD.lib /NODEFAULTLIB:uafxcwd.lib /DEF:"gamemain.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\10000149_AI.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\10000149_AI.lib" /MACHINE:X86 /DLL Debug\basictcpinterface.obj
+         Debug\BasicHttpContext.obj
+         Debug\basichttphelper.obj
+         Debug\gameloadhelper.obj
+         Debug\tcpClientmanager.obj
+         Debug\useractionmanager.obj
+         Debug\usermanager.obj
+         Debug\gamelogic.obj
+         Debug\gamemain.obj
+         Debug\mjdata.obj
+         LINK : 缺少程序数据库 E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\10000149_AI.pdb；正在执行完全链接
+            正在创建库 E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\10000149_AI.lib 和对象 E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\10000149_AI.exp
+     1>basiccode.lib(json_reader.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(json_reader.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(json_value.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(json_value.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(json_writer.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(json_writer.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(BasicBuffer.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(BasicBuffer.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(BasicCriticalSection.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(BasicCriticalSection.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(BasicLoadHelper.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(BasicLoadHelper.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiccode.lib(BasicMutex.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiccode.lib(BasicMutex.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiclogs.lib(basiclogfilter.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiclogs.lib(basiclogfilter.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiclogs.lib(basiclogserver.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiclogs.lib(basiclogserver.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>basiclogs.lib(basicpathhelper.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“basiclogs.lib(basicpathhelper.obj)”或在“E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         10000149_AI.vcxproj -> E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\Debug\10000149_AI.dll
+     1>已完成生成项目“E:\乐8游戏\dc_leba_game\trunk\clientdemo\clientdemo\game\10000149\10000149\10000149_AI.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:15.17

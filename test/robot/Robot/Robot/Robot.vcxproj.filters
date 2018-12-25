@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="http">
+      <UniqueIdentifier>{e9e1be98-d2d1-4ddd-9667-2e936638d4d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="basicbuffer">
+      <UniqueIdentifier>{9f73e41d-6b04-4421-a59f-40b48fefd3a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tcp">
+      <UniqueIdentifier>{6c5aadc8-8fae-4e38-bf85-8ef8f9a22197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="basic">
+      <UniqueIdentifier>{5fdc9013-bc46-4a84-a30d-3d58d3fd39e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="http\head">
+      <UniqueIdentifier>{fb80ae8a-ee60-41af-a8b4-2573166b5301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="http\source">
+      <UniqueIdentifier>{6f1871c9-6bb6-4479-877b-e179b8a03c0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="basic\head">
+      <UniqueIdentifier>{a87b8298-3bd9-4a8b-98e9-c85f6540b962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="basic\source">
+      <UniqueIdentifier>{9876e78b-b9de-4176-982a-121bcbc810e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="basicbuffer\head">
+      <UniqueIdentifier>{1d0182c4-5e38-47ff-bf53-94f61b2b9a94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="basicbuffer\source">
+      <UniqueIdentifier>{27db4403-e10f-4778-915c-f0908d4357d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="head">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="tcp\head">
+      <UniqueIdentifier>{16c24528-b5a6-426b-b55f-119e66f7b2c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tcp\source">
+      <UniqueIdentifier>{0752b724-701d-418a-b019-076137c962cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="robotmanage">
+      <UniqueIdentifier>{f673e453-360e-45ab-ab27-5e06d4c10110}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Robot.h">
+      <Filter>head</Filter>
+    </ClInclude>
+    <ClInclude Include="RobotDlg.h">
+      <Filter>head</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>head</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>head</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>head</Filter>
+    </ClInclude>
+    <ClInclude Include="datastruct.h">
+      <Filter>head</Filter>
+    </ClInclude>
+    <ClInclude Include="usertask.h">
+      <Filter>head</Filter>
+    </ClInclude>
+    <ClInclude Include="realplayercheck.h">
+      <Filter>head</Filter>
+    </ClInclude>
+    <ClInclude Include="gameloadhelper.h">
+      <Filter>head</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicHttpContext.h">
+      <Filter>http\head</Filter>
+    </ClInclude>
+    <ClInclude Include="basichttphelper.h">
+      <Filter>http\head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\comlib\basicsdk\basicdump\basicdumpinterface.h">
+      <Filter>basic\head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\comlib\basicsdk\basiclog\basicloginterface.h">
+      <Filter>basic\head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\comlib\basicsdk\basicbuffer\BasicTranscode.h">
+      <Filter>basicbuffer\head</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicBuffer.h">
+      <Filter>basicbuffer\head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\comlib\basicsdk\basictcp\basicnetdef.h">
+      <Filter>tcp\head</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\comlib\basicsdk\basictcp\basictcpinterface.h">
+      <Filter>tcp\head</Filter>
+    </ClInclude>
+    <ClInclude Include="tcp\tcpClientmanager.h">
+      <Filter>tcp\head</Filter>
+    </ClInclude>
+    <ClInclude Include="RobotManager\RobotAction.h">
+      <Filter>robotmanage</Filter>
+    </ClInclude>
+    <ClInclude Include="RobotManager\useractionmanager.h">
+      <Filter>robotmanage</Filter>
+    </ClInclude>
+    <ClInclude Include="RobotManager\usermanager.h">
+      <Filter>robotmanage</Filter>
+    </ClInclude>
+    <ClInclude Include="tcp\TcpConManager.h">
+      <Filter>tcp\head</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="usertask.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="realplayercheck.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicHttpContext.cpp">
+      <Filter>http\source</Filter>
+    </ClCompile>
+    <ClCompile Include="basichttphelper.cpp">
+      <Filter>http\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\comlib\basicsdk\basicdump\basicdumpinterface.cpp">
+      <Filter>basic\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\comlib\basicsdk\basicbuffer\BasicTranscode.cpp">
+      <Filter>basicbuffer\source</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicBuffer.cpp">
+      <Filter>basicbuffer\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Robot.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="RobotDlg.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\comlib\basicsdk\basictcp\basictcpinterface.cpp">
+      <Filter>tcp\source</Filter>
+    </ClCompile>
+    <ClCompile Include="tcp\tcpClientmanager.cpp">
+      <Filter>tcp\source</Filter>
+    </ClCompile>
+    <ClCompile Include="RobotManager\useractionmanager.cpp">
+      <Filter>robotmanage</Filter>
+    </ClCompile>
+    <ClCompile Include="RobotManager\usermanager.cpp">
+      <Filter>robotmanage</Filter>
+    </ClCompile>
+    <ClCompile Include="gameloadhelper.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="tcp\TcpConManager.cpp">
+      <Filter>tcp\source</Filter>
+    </ClCompile>
+    <ClCompile Include="RobotManager\RobotAction.cpp">
+      <Filter>robotmanage</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Robot.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Robot.rc2">
+      <Filter>resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Robot.ico">
+      <Filter>resource</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

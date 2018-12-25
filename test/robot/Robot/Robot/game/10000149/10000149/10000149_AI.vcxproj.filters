@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="basic">
+      <UniqueIdentifier>{81bc012f-5f80-401d-aeca-80122ebd8829}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gamemain.def">
+      <Filter>源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gamelogic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gamemain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gamemsg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mjdata.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mjmessage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\user\usermanager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\user\useractionmanager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\tcp\tcpClientmanager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\comlib\basicsdk\basictcp\basictcpinterface.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\BasicHttpContext.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\basichttphelper.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\gameloadhelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gamelogic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gamemain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mjdata.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\user\usermanager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\user\useractionmanager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\tcp\tcpClientmanager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\comlib\basicsdk\basictcp\basictcpinterface.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\BasicHttpContext.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\basichttphelper.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\gameloadhelper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
