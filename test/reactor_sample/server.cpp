@@ -17,6 +17,7 @@ int main() {
     seraddr.sin_family = AF_INET;
     seraddr.sin_port = htons(53031);
     seraddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    setnonblocking(listenfd);
 
     if (bind(listenfd, (struct sockaddr*)&seraddr, sizeof(seraddr)) < 0) {
         std::cerr << "bind error " << errno << std::endl;
