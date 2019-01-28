@@ -66,6 +66,10 @@ int EpollDemultiplexer::regist(Handle handle, Event evt)
     ev.data.fd = handle;
     if(evt & ReadEvent)
     {
+        ev.events |= EPOLLIN;
+    }
+    if(evt & WriteEvent)
+    {
         ev.events |= EPOLLOUT;
     }
     ev.events |= EPOLLET;
