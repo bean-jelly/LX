@@ -8,7 +8,7 @@
 
 int main() {
     int listenfd = -1;
-    if ((listenfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+    if ((listenfd = socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0)) < 0) {
         std::cerr << "socket error " << errno << std::endl;
         return -1;
     }
@@ -17,7 +17,6 @@ int main() {
     seraddr.sin_family = AF_INET;
     seraddr.sin_port = htons(53031);
     seraddr.sin_addr.s_addr = htonl(INADDR_ANY);
-    setnonblocking(listenfd);
 
     if (bind(listenfd, (struct sockaddr*)&seraddr, sizeof(seraddr)) < 0) {
         std::cerr << "bind error " << errno << std::endl;

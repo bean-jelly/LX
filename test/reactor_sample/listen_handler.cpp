@@ -7,14 +7,6 @@
 #include <new>
 #include <assert.h>
 
-int setnonblocking(int fd)
-{
-    int old_option = fcntl(fd, F_GETFL);
-    int new_option = old_option | O_NONBLOCK;
-    fcntl(fd, F_SETFL, new_option);
-    return old_option;
-}
-
 ListenHandler::ListenHandler(Handle fd) : _listen_fd(fd){}
 
 ListenHandler::~ListenHandler()
@@ -24,8 +16,14 @@ ListenHandler::~ListenHandler()
 
 void ListenHandler::handle_read()
 {
-    int fd = accept(_listen_fd, NULL, NULL);
-    EventHandler* h = new(std::nothrow)SocketHandler(setnonblocking(fd));
+    int acceptfd = accept(_listen_fd, NULL, NULL);
+    int oldflag = ::fcntl(acceptfd, F_GETFL, 0);
+    int newflag = oldflag | O_NONBLOCK;
+    if(::fcntl(acceptfd, F_SETFL, newflag) == -1)
+    {
+        std::cout << "fcntl error, oldflag =" << oldflag <<", newflag = " << newflag << std::endl;
+    }
+    EventHandler* h = new(std::nothrow)SocketHandler(acceptfd);
     assert(h != NULL);
     Reactor& r = Reactor::get_instance();
     r.regist(h, ReadEvent);
