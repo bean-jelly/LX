@@ -15,7 +15,7 @@ EPOLLET：将EPOLL设为边缘触发(Edge Triggered)模式，这是相对于水�
 EPOLLONESHOT：只监听一次事件，当监听完这次事件之后，如果还需要继续监
 */
 EpollDemultiplexer::EpollDemultiplexer() : _max_fd(0){
-    _epoll_fd = epoll_create(1024);
+    _epoll_fd = epoll_create(1);
 }
 
 EpollDemultiplexer::~EpollDemultiplexer()
