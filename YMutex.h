@@ -10,7 +10,7 @@
 
 #ifdef NDEBUG
 __BEGIN_DECLS
-extern void __assert_perror_fail(int errnum,`
+extern void     (int errnum,`
                                  const char* file,
                                  unsigned int line,
                                  const char* function)

@@ -1,5 +1,6 @@
 #include "reactor.h"
 #include <assert.h>
+#include <iostream>
 #include <new>
 
 Reactor Reactor::reactor;

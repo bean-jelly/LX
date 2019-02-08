@@ -14,7 +14,7 @@ EPOLLHUP：表示对应的文件描述符被挂断；
 EPOLLET：将EPOLL设为边缘触发(Edge Triggered)模式，这是相对于水平触发(Level Triggered)来说的。
 EPOLLONESHOT：只监听一次事件，当监听完这次事件之后，如果还需要继续监
 */
-EpollDemultiplexer::EpollDemultiplexer() : _max_fd(0){
+EpollDemultiplexer::EpollDemultiplexer() : _max_fd(1024){
     _epoll_fd = epoll_create(1);
 }
 
@@ -32,9 +32,12 @@ int EpollDemultiplexer::wait_event(std::map<Handle, EventHandler*>& handlers, in
     //timeout是超时返回,-1表示阻塞,0表示非阻塞,>0表示超时时间
     //返回值表示返回事件的多少
     //events是一个vector,原来容器是可以这样用，直接赋值首个元素的地址
+    std::cout << "start epoll_wait... _epoll_fd: " << _epoll_fd << std::endl;
     int num = epoll_wait(_epoll_fd, &events[0], _max_fd, timeout);
+    std::cout << "epoll_wait num: " << num << std::endl;
     if(num < 0)
     {
+	std::cout << "error num < 0: " << num << std::endl; 
         return num;
     }
     for(int i = 0; i < num; ++i)
@@ -42,14 +45,17 @@ int EpollDemultiplexer::wait_event(std::map<Handle, EventHandler*>& handlers, in
         Handle handle = events[i].data.fd;
         if((EPOLLHUP|EPOLLERR) & events[i].events)
         {
+	    std::cout << "EPOLLERR " << std::endl;
             return -1;
         }
         else
         {
+	    std::cout << "events not empyt" << std::endl;
             if((EPOLLIN) & events[i].events)
             {
                 assert(handlers[handle] != NULL);
-                (handlers[handle])->handle_read();
+                EventHandler* tmp = handlers[handle];
+		tmp->handle_read();
             }
             if(EPOLLOUT & events[i].events)
             {
@@ -73,15 +79,16 @@ int EpollDemultiplexer::regist(Handle handle, Event evt)
         ev.events |= EPOLLOUT;
     }
     ev.events |= EPOLLET;
+    std::cout << "pre epoll_ctl handle: " << handle << std::endl;
     if(epoll_ctl(_epoll_fd, EPOLL_CTL_ADD, handle, &ev) != 0)
     {
         if(errno == ENOENT)
         {
             if(epoll_ctl(_epoll_fd, EPOLL_CTL_ADD, handle, &ev) != 0)
             {
-                std::cerr << "epoll_ctl add error " << errno << std::endl;
+                std::cout << "epoll_ctl add error " << errno << std::endl;
                 return -errno;
-            }
+            }   
             ++_max_fd;
         }
         else

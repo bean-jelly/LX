@@ -17,6 +17,7 @@ ListenHandler::~ListenHandler()
 
 void ListenHandler::handle_read()
 {
+    std::cout << "listenhandler handle_read()" << std::endl;
     int acceptfd = accept(_listen_fd, NULL, NULL);
     int oldflag = ::fcntl(acceptfd, F_GETFL, 0);
     int newflag = oldflag | O_NONBLOCK;

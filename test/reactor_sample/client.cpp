@@ -4,11 +4,15 @@
 #include <iostream>
 #include <errno.h>
 #include <string.h>
+#include <string>
 #include <stdlib.h>
+#include <stdio.h>
 #include "reactor.h"
 #include "event_handler.h"
 #include "listen_handler.h"
 #include "event.h"
+
+using namespace std;
 
 int main()
 {
@@ -18,6 +22,8 @@ int main()
         std::cerr << "socket error" << errno << std::endl;
         exit(-1);
     }
+
+    std::cout << "ready to connect" << std::endl;
 
     struct sockaddr_in seraddr;
     seraddr.sin_family = AF_INET;
@@ -29,18 +35,23 @@ int main()
         exit(-2);
     }
 
+    std::cout << "ready to write" << std::endl;
+ 
     char wbuf[64] = {0};
-    strcpy(wbuf, "hello world");
-    int n = write(socketfd, wbuf, strlen(wbuf));
-
-    char rbuf[64] = {0};
-    memset(rbuf, 0, sizeof(rbuf));
-    n = read(socketfd, rbuf, sizeof(rbuf));
-    std::cout << "send [" << wbuf << "] reply [" << rbuf << "]" << std::endl;
-
-    if (n < 0) {
-        std::cerr << "read error " << errno << std::endl;
-        exit(-3);
+    while(1)
+    {
+        memset(wbuf, 0, 64);
+        fgets(wbuf, 64, stdin);
+    	int n = write(socketfd, wbuf, strlen(wbuf));
+        std::cout << "write socketfd: " << socketfd << " n: " << n << std::endl;
+        char rbuf[64] = {0};
+        memset(rbuf, 0, sizeof(rbuf));
+        n = read(socketfd, rbuf, sizeof(rbuf));
+        std::cout << "send [" << wbuf << "] reply [" << rbuf << "]" << std::endl;
+        if (n < 0) {
+            std::cerr << "read error " << errno << std::endl;
+            exit(-3);
+        }
     }
     close(socketfd);
     return 0;

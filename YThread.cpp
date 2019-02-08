@@ -25,6 +25,7 @@
 */
 namespace YBASE
 {
+    /*detail -----------------------------------------------------------------------------*/
     namespace detail
     {
         pid_t gettid()
@@ -70,12 +71,11 @@ namespace YBASE
             pid_t* tid_;
             CountDownLatch* latch_;
 
-            ThreadData(const ThreadFunc& func, const std::string& name, pid_t* tid, CountDownLatch* latch)
-                :func_(func), name_(name), tid_(tid), latch_(latch){}
+            ThreadData(const ThreadFunc& func, const std::string& name, pid_t* tid, CountDownLatch* latch) :func_(func), name_(name), tid_(tid), latch_(latch){}
 
             void runInThread()
             {
-                pid_t tid = YBASE::CurrentThread::tid();
+                *tid_ = YBASE::CurrentThread::tid();
                 tid_ = NULL;
                 latch_->countDown();
                 latch_ = NULL;
@@ -113,6 +113,7 @@ namespace YBASE
             return NULL;
         }
     }
+    /*detail -----------------------------------------------------------------------------*/
 }
 
 using namespace YBASE;
@@ -122,7 +123,7 @@ void CurrentThread::cacheTid()
     if(t_cachedTid == 0)
     {
         t_cachedTid = detail::gettid();
-        t_tidStringLength = snprintf(t_tidString, sizeof(t_tidString), "%5d ", t_cachedTid);
+        t_tidStringLength = snprintf(t_tidString, sizeof t_tidString, "%5d ", t_cachedTid);
     }
 }
 
@@ -141,8 +142,8 @@ void CurrentThread::sleepUsec(int64_t usec)
 
 AtomicInt32 Thread::numCreated_;
 
-Thread::Thread(const ThreadFunc& func, const std::string& n)
-:started_(false), joined_(false), pthreadId_(0), tid_(new pid_t(0)), func_(func), name_(n), latch_(1)
+Thread::Thread(const ThreadFunc& func, const std::string& name)
+:started_(false), joined_(false), pthreadId_(0), tid_(new pid_t(0)), func_(func), name_(name), latch_(1)
 {
     setDefaultName();
 }

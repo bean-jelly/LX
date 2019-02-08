@@ -18,7 +18,7 @@ int main()
         //child
         int i = 0;
         close(fd[0]);
-        char* child = "I am child!";
+        char child[] = "I am child!";
         while(i < 5)
         {
             write(fd[1], child, strlen(child) + 1);

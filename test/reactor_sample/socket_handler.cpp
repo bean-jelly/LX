@@ -24,10 +24,13 @@ SocketHandler::~SocketHandler()
 
 void SocketHandler::handle_read()
 {
+    printf("SocketHandler::handle_read()\n");
     if(read(_socket_fd, _buf, MAX_SIZE) > 0)
     {
+	printf("%s\n", _buf);
         write(_socket_fd, _buf, strlen(_buf));
     }
+    printf("read error\n");
     handle_error();
 }
 

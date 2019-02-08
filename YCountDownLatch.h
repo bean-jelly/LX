@@ -14,11 +14,10 @@ namespace YBASE
         void        wait();
         void        countDown();
         int         getCount() const;
-
     private:
         mutable     MutexLock mutex_;
-        Condition   condition;
-        int         count_;    
+        Condition   condition_;
+        int         count_;
     };
 }
 

@@ -12,7 +12,11 @@ int main() {
         std::cerr << "socket error " << errno << std::endl;
         return -1;
     }
-
+    
+    int on = 1;
+    ::setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, (char*)&on, sizeof on);
+    ::setsockopt(listenfd, SOL_SOCKET, SO_REUSEPORT, (char*)&on, sizeof on);
+    
     struct sockaddr_in seraddr;
     seraddr.sin_family = AF_INET;
     seraddr.sin_port = htons(53031);
@@ -32,10 +36,11 @@ int main() {
     EventHandler* handler = new ListenHandler(listenfd);
     actor.regist(handler, ReadEvent);
 
-    while(true) {
-        actor.dispatch(100);
-        //std::cout << "one loop" << std::endl;
+    actor.dispatch(-1);
+    std::cout << "actor.dispatch" << std::endl;
+    while(true){
+	;
     }
-
+    
     return 0;
 }

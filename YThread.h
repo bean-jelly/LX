@@ -22,13 +22,13 @@ namespace YBASE
         void start();
         void join();
 
-        bool started() const {return started_;}
-        pid_t tid() const {return tid_;}
-        const std::string& name() const {return name_;}
-        static int numCreated() {return numCreated_.get();}
+        bool                started() const {return started_;}
+        pid_t               tid() const {return tid_;}
+        const std::string&  name() const {return name_;}
+        static int          numCreated() {return numCreated_.get();}
 
     private:
-        void setDefaultName();
+        void                setDefaultName();
 
         bool                started_;
         bool                joined_;
