@@ -60,12 +60,12 @@ int main()
     Foo foo(87.53);
     YBASE::Thread t3(std::bind(&Foo::memberFunc, &foo), "thread for member function without argument");
     t3.start();
-    printf("t3.name=%s\n", t3.name());
+    printf("t3.name=%s\n", t3.name().c_str());
     t3.join();
 
     YBASE::Thread t4(std::bind(&Foo::memberFunc2, std::ref(foo), std::string("Yan")));
     t4.start();
-    printf("t4.name=%s\n", t4.name());
+    printf("t4.name=%s\n", t4.name().c_str());
     t4.join();
 
     {
