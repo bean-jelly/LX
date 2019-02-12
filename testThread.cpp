@@ -23,8 +23,9 @@ void threadFunc2(int x)
 
 void threadFunc3()
 {
-    printf("threadFunc3 tid=%d\n", YBASE::CurrentThread::tid());
+    printf("before threadFunc3 tid=%d\n", YBASE::CurrentThread::tid());
     mysleep(1);
+    printf("after threadFunc3 tid=%d\n", YBASE::CurrentThread::tid());
 }
 
 class Foo
@@ -71,16 +72,16 @@ int main()
     {
         YBASE::Thread t5(threadFunc3);
         t5.start();
-        printf("t5.start()");
+        printf("t5.start()\n");
     }
     mysleep(2);
     {
         YBASE::Thread t6(threadFunc3);
         t6.start();
-        printf("t6.start()");
+        printf("t6.start()\n");
         mysleep(2);
     }
-    printf("prepare over");
+    printf("prepare over\n");
     sleep(2);
     printf("number of created threads %d\n", YBASE::Thread::numCreated());
 }
