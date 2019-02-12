@@ -16,9 +16,9 @@ void threadFunc()
     printf("threadFunc tid=%d\n", YBASE::CurrentThread::tid());
 }
 
-void ThreadFunc2(int x)
+void threadFunc2(int x)
 {
-    printf("ThreadFunc2 tid=%d, x=%d\n", YBASE::CurrentThread::tid(), x);
+    printf("threadFunc2 tid=%d, x=%d\n", YBASE::CurrentThread::tid(), x);
 }
 
 void threadFunc3()
