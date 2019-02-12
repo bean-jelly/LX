@@ -1,7 +1,7 @@
 #include "YThread.h"
 #include "YCurrentThread.h"
 #include "YException.h"
-#include "Logging.h"
+#include "YLogging.h"
 
 #include <boost/static_assert.hpp>
 #include <boost/type_traits/is_same.hpp>

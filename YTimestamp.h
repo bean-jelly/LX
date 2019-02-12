@@ -24,7 +24,7 @@ namespace YBASE
         string toString() const;
         string toFormattedString(bool showMicroseconds = true) const;
 
-        bool valid() const {return microSecondsSinceEpoch_ > 0};
+        bool valid() const {return microSecondsSinceEpoch_ > 0;}
 
         int64_t microSecondsSinceEpoch() const {microSecondsSinceEpoch_;}
         time_t secondsSinceEpoch() const
