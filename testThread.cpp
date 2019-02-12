@@ -60,22 +60,27 @@ int main()
     Foo foo(87.53);
     YBASE::Thread t3(std::bind(&Foo::memberFunc, &foo), "thread for member function without argument");
     t3.start();
+    printf("t3.name=%s\n", t3.name());
     t3.join();
 
     YBASE::Thread t4(std::bind(&Foo::memberFunc2, std::ref(foo), std::string("Yan")));
     t4.start();
+    printf("t4.name=%s\n", t4.name());
     t4.join();
 
     {
         YBASE::Thread t5(threadFunc3);
         t5.start();
+        printf("t5.start()");
     }
     mysleep(2);
     {
         YBASE::Thread t6(threadFunc3);
         t6.start();
+        printf("t6.start()");
         mysleep(2);
     }
+    printf("prepare over");
     sleep(2);
     printf("number of created threads %d\n", YBASE::Thread::numCreated());
 }
