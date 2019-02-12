@@ -246,7 +246,7 @@ TimeZone::TimeZone(int eastOfUtc, const char* name) : data_(new TimeZone::Data)
 struct tm TimeZone::toLocalTime(time_t seconds) const
 {
     struct tm localTime;
-    memZero(&localTime, sizeof(localTime));
+    bzero(&localTime, sizeof(localTime));
     assert(data_ != NULL);
     const Data& data(*data_);
 
@@ -261,6 +261,7 @@ struct tm TimeZone::toLocalTime(time_t seconds) const
         localTime.tm_gmtoff = local->gmtOffset;
         localTime.tm_zone = &data.abbreviation[local->arrbIdx];
     }
+
     return localTime;
 }
 

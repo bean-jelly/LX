@@ -112,7 +112,7 @@ void Logger::Impl::formatTime()
         struct tm tm_time;
         if(g_logTimeZone.valid())
         {
-            tm_time = f_logTimeZone.toLocalTime(seconds);
+            tm_time = g_logTimeZone.toLocalTime(seconds);
         }
         else
         {

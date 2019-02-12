@@ -5,7 +5,7 @@
 #include <memory>
 #include <time.h>
 
-namespace YABSE
+namespace YBASE
 {
     class TimeZone : public YBASE::copyable
     {
