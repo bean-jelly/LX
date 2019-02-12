@@ -23,7 +23,7 @@ void ThreadFunc2(int x)
 
 void threadFunc3()
 {
-    printf("threadFunc3 tid=%d\n", muduo::CurrentThread::tid());
+    printf("threadFunc3 tid=%d\n", YBASE::CurrentThread::tid());
     mysleep(1);
 }
 
@@ -45,7 +45,7 @@ private:
 
 int main()
 {
-    printf("pid=%d, tid=%d\n", ::getpid(), muduo::CurrentThread::tid());
+    printf("pid=%d, tid=%d\n", ::getpid(), YBASE::CurrentThread::tid());
 
     YBASE::Thread t1(threadFunc);
     t1.start();
@@ -72,10 +72,10 @@ int main()
     }
     mysleep(2);
     {
-        muduo::Thread t6(threadFunc3);
+        YBASE::Thread t6(threadFunc3);
         t6.start();
         mysleep(2);
     }
     sleep(2);
-    printf("number of created threads %d\n", muduo::Thread::numCreated());
+    printf("number of created threads %d\n", YBASE::Thread::numCreated());
 }
