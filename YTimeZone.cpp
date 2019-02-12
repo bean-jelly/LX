@@ -132,7 +132,7 @@ namespace YBASE
 
         bool readTimeZoneFile(const char* zonefile, struct TimeZone::Data* data)
         {
-            FILE f(zonefile);
+            File f(zonefile);
             if(f.valid())
             {
                 try
@@ -160,7 +160,7 @@ namespace YBASE
                     for(int i = 0; i < timecnt; ++i)
                     {
                         uint8_t local = f.readUInt8();
-                        localtime.push_back(local);
+                        localtimes.push_back(local);
                     }
                     for(int i = 0; i < typecnt; ++i)
                     {
