@@ -202,7 +202,7 @@ int Thread::join()
     return pthread_join(pthreadId_, NULL);
 }
 
-void say()
+/*void say()
 {
     std::cout << "hello world" << std::endl;
 }
@@ -215,4 +215,4 @@ int main()
     thread_t.join();
 
     return 0;
-}
+}*/
