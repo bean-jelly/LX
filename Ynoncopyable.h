@@ -5,7 +5,7 @@ namespace YBASE
 {
     class noncopyable
     {
-    public:
+    private:
         noncopyable(const noncopyable&)=delete;
         void operator=(const noncopyable&)=delete;
 
