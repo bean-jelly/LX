@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void printf()
+void print()
 {
     printf("tid = %d\n", YBASE::CurrentThread::tid());
 }
@@ -25,8 +25,8 @@ void test(int maxSize)
     pool.start(5);
 
     LOG_WARN << "Adding";
-    pool.run(printf);
-    pool.run(printf);
+    pool.run(print);
+    pool.run(print);
     for(int i = 0; i < 100; i++)
     {
         char buf[32];
