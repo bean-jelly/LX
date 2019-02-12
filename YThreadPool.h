@@ -40,7 +40,7 @@ namespace YBASE
         string name_;
         Task threadInitCallback_;
         std::vector<std::unique_ptr<YBASE::Thread> > threads_;
-        std::deque<Task> queue_;
+        std::deque<Task> Taskqueue_;
         size_t maxQueueSize_;
         bool running_;
     };

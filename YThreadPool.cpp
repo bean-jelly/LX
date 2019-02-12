@@ -8,7 +8,7 @@ using namespace YBASE;
 
 ThreadPool::ThreadPool(const string& nameArg):mutex_(),
                                               notEmpty_(mutex_),
-                                              noFull_(mutex_),
+                                              notFull_(mutex_),
                                               name_(nameArg),
                                               maxQueueSize_(0),
                                               running_(false)
