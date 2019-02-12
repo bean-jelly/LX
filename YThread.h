@@ -20,7 +20,7 @@ namespace YBASE
         ~Thread();
 
         void start();
-        void join();
+        int join();
 
         bool                started() const {return started_;}
         pid_t               tid() const {return tid_;}

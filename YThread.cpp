@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <unistd.h>         //unix类系统定义符号常量的头文件，也包含了read(),write(),geepid(),sleep(),fork()等
 #include <sys/types.h>      //unix/Linux系统的基本系统数据类型的头文件，含有size_t，time_t，pid_t等类型
-#include <windows.h>
+//#include <windows.h>
 #include <linux/unistd.h>
 #include <sys/prctl.h>      //进程相关
 #include <sys/syscall.h>    //syscall()执行一个系统调用，根据指定的参数number和所有系统调用的汇编语言接口来确定调用哪个系统调用。
@@ -134,7 +134,7 @@ bool CurrentThread::isMainThread()
 
 void CurrentThread::sleepUsec(int64_t usec)
 {
-    struct timespaec ts = {0, 0};
+    struct timespec ts = {0, 0};
     ts.tv_sec = static_cast<time_t>(usec / Timestamp::kMicroSecondsPerSecond);
     ts.tv_nsec = static_cast<long>(usec % Timestamp::kMicroSecondsPerSecond * 1000);
     ::nanosleep(&ts, NULL);
@@ -143,7 +143,7 @@ void CurrentThread::sleepUsec(int64_t usec)
 AtomicInt32 Thread::numCreated_;
 
 Thread::Thread(const ThreadFunc& func, const std::string& name)
-:started_(false), joined_(false), pthreadId_(0), tid_(new pid_t(0)), func_(func), name_(name), latch_(1)
+:started_(false), joined_(false), pthreadId_(0), tid_(0), func_(std::move(func)), name_(name), latch_(1)
 {
     setDefaultName();
 }
@@ -186,12 +186,12 @@ void Thread::start()
     }
 }
 
-void Thread::join()
+int Thread::join()
 {
     assert(started_);
     assert(!joined_);
     joined_ = true;
-    pthreadId_.join();
+    return pthread_join(pthreadId_, NULL);
 }
 
 void say()

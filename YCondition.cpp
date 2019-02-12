@@ -1,9 +1,9 @@
 #include "YCondition.h"
 #include <errno.h>
 
-bool YBASE::Condition::waitForeSeconds(double seconds)
+bool YBASE::Condition::waitForSeconds(double seconds)
 {
-    struct timespaec abstime;
+    struct timespec abstime;
     clock_gettime(CLOCK_REALTIME, &abstime);
 
     const int64_t kNanoSecondsPerSecond = 1000000000;
@@ -12,5 +12,5 @@ bool YBASE::Condition::waitForeSeconds(double seconds)
     abstime.tv_nsec =static_cast<long>((abstime.tv_nsec + nanoseconds) % kNanoSecondsPerSecond);
 
     MutexLock::UnassignGuard ug(mutex_);
-    return ETIMEDOUT == pthread_cond_timewait(&pcond_, mutex_.getPthreadMutex(), &abstime);
+    return ETIMEDOUT == pthread_cond_timedwait(&pcond_, mutex_.getPthreadMutex(), &abstime);
 }

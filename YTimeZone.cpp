@@ -6,10 +6,12 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+
 #include <assert.h>
 #include <endian.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <strings.h>
 
 namespace YBASE
 {

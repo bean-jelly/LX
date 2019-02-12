@@ -11,6 +11,7 @@ namespace YBASE
     public:
         explicit Exception(const char* what);
         explicit Exception(const string& what);
+        virtual ~Exception() throw();
         virtual const char* what() const throw();
         const char* stackTrace() const throw();
 

@@ -12,7 +12,7 @@ namespace YABSE
     public:
         explicit TimeZone(const char* zonefile);
         TimeZone(int eastOfUtc, const char* tzname);
-        TimeZone() = default;
+        TimeZone() {}
 
         bool valid() const
         {

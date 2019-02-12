@@ -1,7 +1,7 @@
 #ifndef YBASE_LOGGING_H
 #define YBASE_LOGGING_H
 
-#include "LogStream.h"
+#include "YLogStream.h"
 #include "YTimestamp.h"
 
 namespace YBASE
@@ -53,7 +53,7 @@ namespace YBASE
 
         Logger(SourceFile file, int line);
         Logger(SourceFile file, int line, LogLevel level);
-        Logger(SourceFile file, int line, LogLevel level), const char* func;
+        Logger(SourceFile file, int line, LogLevel level, const char* func);
         Logger(SourceFile file, int line, bool toAbort);
         ~Logger();
 
@@ -79,7 +79,7 @@ namespace YBASE
             void finish();
 
             Timestamp time_;
-            LogSream stream_;
+            LogStream stream_;
             LogLevel level_;
             int line_;
             SourceFile basename_;
