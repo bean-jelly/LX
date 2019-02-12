@@ -25,13 +25,13 @@ void test(int maxSize)
     pool.start(5);
 
     LOG_WARN << "Adding";
-    pool.run(print);
-    pool.run(print);
+    pool.run(printf);
+    pool.run(printf);
     for(int i = 0; i < 100; i++)
     {
         char buf[32];
         snprintf(buf, sizeof buf, "task %d", i);
-        pool run(std::bind(printString, std::string(buf)));
+        pool.run(std::bind(printString, std::string(buf)));
     }
     LOG_WARN << "Done";
 
