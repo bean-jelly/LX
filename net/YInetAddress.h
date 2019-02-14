@@ -1,8 +1,8 @@
 #ifndef YBASE_INETADDRESS_H
 #define YBASE_INETADDRESS_H
 
-#include "../YCopyable.h"
-#include "../YStringPiece.h"
+#include <YCopyable.h>
+#include <YStringPiece.h>
 
 #include <netinet/in.h>
 

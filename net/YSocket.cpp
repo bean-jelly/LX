@@ -1,7 +1,7 @@
-#include "YSocket.h"
-#include "../YLogging.h"
-#include "YInetAddress.h"
-#include "YSocketsOps.h"
+#include <YLogging.h>
+#include <net/YSocket.h>
+#include <net/YInetAddress.h>
+#include <net/YSocketsOps.h>
 
 #include <netinet/in.h>
 #include <netinet/tcp.h>

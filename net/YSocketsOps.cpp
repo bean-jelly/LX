@@ -1,7 +1,7 @@
-#include "YSocketsOps.h"
-#include "../YLogging.h"
-#include "../YTypes.h"
-#include "YEndian.h"
+#include <YLogging.h>
+#include <YTypes.h>
+#include <net/YEndian.h>
+#include <net/YSocketsOps.h>
 
 #include <errno.h>
 #include <fcntl.h>

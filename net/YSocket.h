@@ -1,7 +1,7 @@
 #ifndef YBASE_NET_SOCKET_H
 #define YBASE_NET_SOCKET_H
 
-#include "../YNoncopyable.h"
+#include <YNoncopyable.h>
 
 struct tcp_info;
 

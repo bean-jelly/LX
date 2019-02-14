@@ -1,7 +1,7 @@
 #ifndef YBASE_NET_BUFFER_H
 #define YBASE_NET_BUFFER_H
 
-#include <YCopyable.h>
+#include <YCopeable.h>
 #include <YStringPiece.h>
 #include <YTypes.h>
 #include <net/YEndian.h>
