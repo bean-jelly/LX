@@ -48,6 +48,7 @@ namespace YBASE
         //parent fork创建了子进程以后，但在fork返回之前在父进程的进程环境中调用的
         void afterFork()
         {
+            //为什么要赋值为0和main，因为fork可能在主线程中调用，也可能在子线程中调用。fork得到一个新进程，
             YBASE::CurrentThread::t_cachedTid = 0;
             YBASE::CurrentThread::t_threadName = "main";
             CurrentThread::tid();
@@ -160,7 +161,7 @@ Thread::~Thread()
 {
     if(started_ && !joined_)
     {
-        pthread_detach(pthreadId_);
+        pthread_detach(pthreadId_);//pthreadId_就是用来分离子线程的
     }
 }
 
