@@ -94,6 +94,8 @@ namespace YBASE
         return g_logLevel;
     }
 
+    //非常的关键，这里的宏用Logger(__FILE__,__LINE__,XX)创建一个临时对象来输出，输出完了
+    //可以立即销毁，不然的话，后打印的log会先输出，因为退出生命周期后，先声明的对象最后销毁
     #define LOG_TRACE if(YBASE::Logger::logLevel() <= YBASE::Logger::TRACE) \
         YBASE::Logger(__FILE__, __LINE__, YBASE::Logger::TRACE, __func__).stream()
     #define LOG_DEBUG if(YBASE::Logger::logLevel() <= YBASE::Logger::DEBUG) \
