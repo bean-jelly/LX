@@ -1,7 +1,7 @@
 #ifndef YBASE_CHANNEL_H
 #define YBASE_CHANNEL_H
 
-#include <YTimestamp.h>
+#include <LX/base/YTimestamp.h>
 #include <functional>
 #include <memory>
 

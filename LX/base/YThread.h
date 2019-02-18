@@ -1,9 +1,9 @@
 #ifndef YBASE_THREAD_H
 #define YBASE_THREAD_H
 
-#include "YAtomic.h"
-#include "YCountDownLatch.h"
-#include "YTypes.h"
+#include <LX/base/YAtomic.h>
+#include <LX/base/YCountDownLatch.h>
+#include <LX/base/YTypes.h>
 
 #include <functional>
 #include <memory>

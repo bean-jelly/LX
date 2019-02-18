@@ -1,11 +1,11 @@
 #ifndef YBASE_NET_TCPCONNECTION_H
 #define YBASE_NET_TCPCONNECTION_H
 
-#include <YStringPiece.h>
-#include <YTypes.h>
-#include <net/YCallbacks.h>
-#include <net/YBuffer.h>
-#include <net/YInetAddress.h>
+#include <LX/base/YStringPiece.h>
+#include <LX/base/YTypes.h>
+#include <LX/net/YCallbacks.h>
+#include <LX/net/YBuffer.h>
+#include <LX/net/YInetAddress.h>
 
 #include <memory>
 #include <boost/any.hpp>

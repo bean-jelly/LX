@@ -1,8 +1,8 @@
 #ifndef YBASE_TIMESTAMP_H
 #define YBASE_TIMESTAMP_H
 
-#include "YCopyable.h"
-#include "YTypes.h"
+#include <LX/base/YCopyable.h>
+#include <LX/base/YTypes.h>
 #include <boost/operators.hpp>
 
 namespace YBASE

@@ -1,8 +1,8 @@
 #ifndef YAN_BASE_MUTEX_H
 #define YAN_BASE_MUTEX_H
 
-#include "YCurrentThread.h"
-#include "YNoncopyable.h"
+#include <LX/base/YCurrentThread.h>
+#include <LX/base/YNoncopyable.h>
 #include <assert.h>
 #include <pthread.h>
 

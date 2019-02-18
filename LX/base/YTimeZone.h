@@ -1,7 +1,7 @@
 #ifndef YBASE_TIMEZONE_H
 #define YBASE_TIMEZONE_H
 
-#include "YCopyable.h"
+#include <LX/base/YCopyable.h>
 #include <memory>
 #include <time.h>
 

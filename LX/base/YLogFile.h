@@ -1,8 +1,8 @@
 #ifndef YBASE_LOGFILE_H
 #define YBASE_LOGFILE_H
 
-#include "YMutex.h"
-#include "YTypes.h"
+#include <LX/base/YMutex.h>
+#include <LX/base/YTypes.h>
 
 #include <memory>
 

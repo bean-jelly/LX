@@ -1,6 +1,6 @@
-#include "YAsyncLogging.h"
-#include "YLogFile.h"
-#include "YTimestamp.h"
+#include <LX/base/YAsyncLogging.h>
+#include <LX/base/YLogFile.h>
+#include <LX/base/YTimestamp.h>
 
 #include <stdio.h>
 

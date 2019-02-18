@@ -1,10 +1,10 @@
 #ifndef YBASE_THREADPOOL_H
 #define YBASE_THREADPOOL_H
 
-#include "YCondition.h"
-#include "YMutex.h"
-#include "YThread.h"
-#include "YTypes.h"
+#include <LX/base/YCondition.h>
+#include <LX/base/YMutex.h>
+#include <LX/base/YThread.h>
+#include <LX/base/YTypes.h>
 
 #include <deque>
 #include <vector>

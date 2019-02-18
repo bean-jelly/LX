@@ -1,8 +1,8 @@
 #ifndef YBASE_BLOCKINGQUEUE_H
 #define YBASE_BLOCKINGQUEUE_H
 
-#include "YCondition.h"
-#include "YMutex.h"
+#include <LX/base/YCondition.h>
+#include <LX/base/YMutex.h>
 
 #include <boost/noncopyable.hpp>
 #include <queue>

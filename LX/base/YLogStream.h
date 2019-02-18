@@ -1,9 +1,9 @@
 #ifndef YBASE_LOGSTREAM_H
 #define YBASE_LOGSTREAM_H
 
-#include "YNoncopyable.h"
-#include "YStringPiece.h"
-#include "YTypes.h"
+#include <LX/base/YNoncopyable.h>
+#include <LX/base/YStringPiece.h>
+#include <LX/base/YTypes.h>
 #include <assert.h>
 #include <string.h>
 

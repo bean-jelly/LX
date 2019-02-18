@@ -1,7 +1,7 @@
-#include <YLogging.h>
-#include <YTypes.h>
-#include <net/YEndian.h>
-#include <net/YSocketsOps.h>
+#include <LX/base/YLogging.h>
+#include <LX/base/YTypes.h>
+#include <LX/net/YEndian.h>
+#include <LX/net/YSocketsOps.h>
 
 #include <errno.h>
 #include <fcntl.h>

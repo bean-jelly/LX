@@ -1,10 +1,10 @@
 #ifndef YBASE_NET_BUFFER_H
 #define YBASE_NET_BUFFER_H
 
-#include <YCopeable.h>
-#include <YStringPiece.h>
-#include <YTypes.h>
-#include <net/YEndian.h>
+#include <LX/base/YCopeable.h>
+#include <LX/base/YStringPiece.h>
+#include <LX/base/YTypes.h>
+#include <LX/net/YEndian.h>
 
 #include <algorithm>
 #include <vector>

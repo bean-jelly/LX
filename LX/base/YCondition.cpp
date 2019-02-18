@@ -1,4 +1,4 @@
-#include "YCondition.h"
+#include <LX/base/YCondition.h>
 #include <errno.h>
 
 bool YBASE::Condition::waitForSeconds(double seconds)

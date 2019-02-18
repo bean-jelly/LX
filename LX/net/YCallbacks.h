@@ -1,7 +1,7 @@
 #ifndef YBASE_NET_CALLBACKS_H
 #define YBASE_NET_CALLBACKS_H
 
-#include <YTimestamp.h>
+#include <LX/base/YTimestamp.h>
 #include <functional>
 #include <memcory>
 

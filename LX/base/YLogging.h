@@ -1,8 +1,8 @@
 #ifndef YBASE_LOGGING_H
 #define YBASE_LOGGING_H
 
-#include "YLogStream.h"
-#include "YTimestamp.h"
+#include <LX/base/YLogStream.h>
+#include <LX/base/YTimestamp.h>
 
 namespace YBASE
 {

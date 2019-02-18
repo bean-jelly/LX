@@ -1,4 +1,4 @@
-#include "YException.h"
+#include <LX/base/YException.h>
 
 #include <execinfo.h>
 #include <stdlib.h>

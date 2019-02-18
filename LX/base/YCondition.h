@@ -1,7 +1,7 @@
 #ifndef YBASE_CONDITION_H
 #define YBASE_CONDITION_H
 
-#include "YMutex.h"
+#include <LX/base/YMutex.h>
 #include <pthread.h>
 
 namespace YBASE

@@ -1,5 +1,5 @@
-#include "YThreadPool.h"
-#include "YException.h"
+#include <LX/base/YThreadPool.h>
+#include <LX/base/YException.h>
 
 #include <assert.h>
 #include <stdio.h>

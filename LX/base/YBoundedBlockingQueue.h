@@ -1,8 +1,8 @@
 #ifndef YBASE_BOUNDEDBLOCKINGQUEUE_H
 #define YBASE_BOUNDEDBLOCKINGQUEUE_H
 
-#include "YCondition.h"
-#include "YMutex.h"
+#include <LX/base/YCondition.h>
+#include <LX/base/YMutex.h>
 
 #include <boost/circular_buffer.hpp>
 #include <boost/noncopyable.hpp>

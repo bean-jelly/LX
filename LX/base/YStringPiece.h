@@ -4,7 +4,7 @@
 #include <string.h>
 #include <iosfwd>
 
-#include "YTypes.h"
+#include <LX/base/YTypes.h>
 
 namespace YBASE
 {

@@ -1,7 +1,7 @@
-#include <net/YInetAddress.h>
-#include <YLogging.h>
-#include <net/YEndian.h>
-#include <net/YSocketsOps.h>
+#include <LX/net/YInetAddress.h>
+#include <LX/base/YLogging.h>
+#include <LX/net/YEndian.h>
+#include <LX/net/YSocketsOps.h>
 
 #include <netdb.h>
 #include <strings.h>

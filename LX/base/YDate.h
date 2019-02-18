@@ -1,8 +1,8 @@
 #ifndef YBASE_DATE_H
 #define YBASE_DATE_H
 
-#include "YCopyable.h"
-#include "YTypes.h"
+#include <LX/base/YCopyable.h>
+#include <LX/base/YTypes.h>
 
 struct tm;
 
