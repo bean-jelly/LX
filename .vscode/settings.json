@@ -61,6 +61,7 @@
         "future": "cpp",
         "atomic": "cpp",
         "deque": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "set": "cpp"
     }
 }
