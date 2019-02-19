@@ -123,6 +123,7 @@ void Logger::Impl::formatTime()
             tm_time.tm_year + 1900, tm_time.tm_mon + 1, tm_time.tm_mday,
             tm_time.tm_hour, tm_time.tm_min, tm_time.tm_sec);
         assert(len == 17);
+        (void)len;
     }
 
     if (g_logTimeZone.valid())
