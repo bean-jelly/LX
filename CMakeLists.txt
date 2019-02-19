@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 2.8)
 
 project(lx)
 
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE "Release"
+endif()
+
 set(CXX_FLAGS
     -g
     -DCHECK_PTHREAD_RETURN_VALUE
@@ -40,3 +44,5 @@ include_directories(${PROJECT_SOURCE_DIR})
 message(STATUS "CXX_FLAGS = " ${CMAKE_CXX_FLAGS} " " ${CMAKE_CXX_FLAGS_${BUILD_TYPE}})
 
 add_subdirectory(LX/base)
+
+# add_subdirectory(LX/net)
