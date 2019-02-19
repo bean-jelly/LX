@@ -151,8 +151,8 @@ void CurrentThread::sleepUsec(int64_t usec)
 
 AtomicInt32 Thread::numCreated_;
 
-Thread::Thread(const ThreadFunc& func, const std::string& name)
-:started_(false), joined_(false), pthreadId_(0), tid_(0), func_(std::move(func)), name_(name), latch_(1)
+Thread::Thread(const ThreadFunc& func, const std::string& n)
+:started_(false), joined_(false), pthreadId_(0), tid_(0), func_(std::move(func)), name_(n), latch_(1)
 {
     setDefaultName();
 }
