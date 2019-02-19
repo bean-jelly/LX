@@ -3,7 +3,6 @@ set(base_SRCS
     YCountDownLatch.cpp
     YDate.cpp
     YException.cpp
-    YFileUtil.cpp
     YLogFile.cpp
     YLogging.cpp
     YLogStream.cpp
