@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(lx)
+project(LX)
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Release")
@@ -21,7 +21,7 @@ set(CXX_FLAGS
     -Wshadow
     -Wwrite-strings
     -march=native
-    std=c++0x
+    -std=c++11
     -rdynamic
 )
 
