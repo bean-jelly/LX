@@ -14,7 +14,7 @@ set(base_SRCS
     )
 
 add_library(lx_base ${base_SRCS})
-target_link_libraries(lx_base ypthread rt)
+target_link_libraries(lx_base pthread rt)
 
 install(TARGETS lx_base DESTINATION lib)
 
