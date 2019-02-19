@@ -43,6 +43,6 @@ include_directories(${PROJECT_SOURCE_DIR})
 
 message(STATUS "CXX_FLAGS = " ${CMAKE_CXX_FLAGS} " " ${CMAKE_CXX_FLAGS_${BUILD_TYPE}})
 
-add_subdirectory(LX/base)
+add_subdirectory(base)
 
-# add_subdirectory(LX/net)
+# add_subdirectory(net)
