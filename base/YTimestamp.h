@@ -26,7 +26,7 @@ namespace YBASE
 
         bool valid() const {return microSecondsSinceEpoch_ > 0;}
 
-        int64_t microSecondsSinceEpoch() const {microSecondsSinceEpoch_;}
+        int64_t microSecondsSinceEpoch() const {return microSecondsSinceEpoch_;}
         time_t secondsSinceEpoch() const
         { return static_cast<time_t>(microSecondsSinceEpoch_ / kMicroSecondsPerSecond);}
 
