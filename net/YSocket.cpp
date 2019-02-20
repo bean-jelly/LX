@@ -45,7 +45,6 @@ bool Socket::getTcpInfoString(char* buf, int len) const
         tcpi.tcpi_snd_ssthresh,
         tcpi.tcpi_snd_cwnd,
         tcpi.tcpi_total_retrans);   // Total retransmits for entire connection
-        )
     }
     return ok;
 }

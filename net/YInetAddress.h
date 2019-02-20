@@ -38,7 +38,7 @@ namespace YBASE
         private:
             union
             {
-                struct sockaddr_in addr;
+                struct sockaddr_in addr_;
                 struct sockaddr_in6 addr6_;
             };
         };
