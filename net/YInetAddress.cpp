@@ -71,8 +71,8 @@ string InetAddress::toIp() const
 
 uint32_t InetAddress::ipNetEndian() const
 {
-  assert(family() == AF_INET);
-  return addr_.sin_addr.s_addr;
+    assert(family() == AF_INET);
+    return addr_.sin_addr.s_addr;
 }
 
 uint16_t InetAddress::toPort() const
