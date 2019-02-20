@@ -4,6 +4,7 @@ set(net_SRCS
     YEventLoop.cpp
     YInetAddress.cpp
     YSocket.cpp
+    YPoller.cpp
     YSocketsOps.cpp
     YTcpConnection.cpp
     YTimer.cpp
