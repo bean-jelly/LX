@@ -1,7 +1,7 @@
 #ifndef YBASE_NET_TIMERID_H
 #define YBASE_NET_TIMERID_H
 
-#include <LX/base/copyable.h>
+#include <LX/base/YCopyable.h>
 
 namespace YBASE
 {
