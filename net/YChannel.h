@@ -20,7 +20,7 @@ namespace YBASE
             Channel(EventLoop* loop, int fd);
             ~Channel();
 
-            void handleEvent(Timestamp, receiveTime);
+            void handleEvent(Timestamp receiveTime);
             void setReadCallback(ReadEventCallback cb) {readCallback_ = std::move(cb);}
             void setWriteCallback(EventCallback cb) {writeCallback_ = std::move(cb);}
             void setCloseCallback(EventCallback cb) {closeCallback_ = std::move(cb);}

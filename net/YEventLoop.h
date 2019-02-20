@@ -40,7 +40,7 @@ namespace YBASE
             //It wakes up the loop, and run the cb
             //If in the same loop thread, cb is run within the function
             //Safe to call from other threds
-            void runInLoop(functor cb);
+            void runInLoop(Functor cb);
 
             //Queues callback in the loop thread
             //Runs after finish pooling
@@ -52,7 +52,7 @@ namespace YBASE
 
             TimerId runAfter(double delay, TimerCallback cb);
 
-            TImerId runEvery(double interval, TimerCallback cb);
+            TimerId runEvery(double interval, TimerCallback cb);
 
             void cancel(TimerId timerId);
 
@@ -95,10 +95,10 @@ namespace YBASE
             void doPendingFunctors();
             void printActiveChannels() const;
 
-            typedef std::vecor<Channel*> ChannelList;
+            typedef std::vector<Channel*> ChannelList;
 
             bool                        looping_;
-            std::atomic<boo>            quit_;
+            std::atomic<bool>            quit_;
             bool                        eventHandling_;
             bool                        callingPendingFunctors_;
             int64_t                     iteration_;
@@ -118,3 +118,5 @@ namespace YBASE
         };
     }
 }
+
+#endif
