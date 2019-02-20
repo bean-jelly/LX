@@ -1,5 +1,5 @@
-#include <LX/net/Poller.h>
-#include <LX/net/Channel.h>
+#include <LX/net/YPoller.h>
+#include <LX/net/YChannel.h>
 
 using namespace YBASE;
 using namespace YBASE::net;
