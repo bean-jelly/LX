@@ -338,7 +338,7 @@ namespace YBASE
                 return buffer_.capacity();
             }
 
-            ssize_t ReadEncryptedFileRaw(int fd, int* savedErrno);
+            ssize_t readFd(int fd, int* savedErrno);
 
         private:
             char* begin()
