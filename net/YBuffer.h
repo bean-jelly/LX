@@ -80,6 +80,7 @@ namespace YBASE
                 assert(peek() <= start);
                 assert(start <= beginWrite());
                 const char* crlf = std::search(start, beginWrite(), kCRLF, kCRLF+2);
+                return crlf == beginWrite() ? NULL : crlf;
             }
 
             const char* findEOL() const
@@ -87,6 +88,7 @@ namespace YBASE
                 //void *memchr(const void *str, int c, size_t n)
                 // 搜索参数str指向的字符串的前n个字节中第一次出现的字符c（unsigned char类型）。
                 const void* eol = memchr(peek(), '\n', readableBytes());
+                return static_cast<const char*>(eol);
             }
 
             const char* findEOL(const char* start) const
@@ -94,6 +96,7 @@ namespace YBASE
                 assert(peek() <= start);
                 assert(start <= beginWrite());
                 const void* eol = memchr(start, '\n', beginWrite() - start);
+                return static_cast<const char*>(eol);
             }
 
             // retrieve returns void, to prevent
@@ -184,7 +187,7 @@ namespace YBASE
                 assert(writableBytes() >= len);
             }
 
-            void hasWritten(siez_t len)
+            void hasWritten(size_t len)
             {
                 assert(len <= writableBytes());
                 writerIndex_ += len;
