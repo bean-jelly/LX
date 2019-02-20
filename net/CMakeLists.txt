@@ -16,14 +16,14 @@ target_link_libraries(lx_net lx_base)
 install(TARGETS lx_net DESTINATION lib)
 
 set(HEADERS
-    Buffer.h
-    Callbacks.h
-    Channel.h
-    Endian.h
-    EventLoop.h
-    InetAddress.h
-    TcpConnection.h
-    TimerId.h
+    YBuffer.h
+    YCallbacks.h
+    YChannel.h
+    YEndian.h
+    YEventLoop.h
+    YInetAddress.h
+    YTcpConnection.h
+    YTimerId.h
   )
 
   install(FILES ${HEADERS} DESTINATION include/lx/net)
