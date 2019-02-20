@@ -11,6 +11,7 @@
 
 #include <assert.h>
 #include <string.h>
+#include <unistd.h>
 
 namespace YBASE
 {
@@ -125,6 +126,11 @@ namespace YBASE
             void retrieveInt64()
             {
                 retrieve(sizeof(int64_t));
+            }
+
+            void retrieveInt32()
+            {
+                retrieve(sizeof(int32_t));
             }
 
             void retrieveInt16()
