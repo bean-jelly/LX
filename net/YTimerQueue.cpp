@@ -10,6 +10,29 @@
 #include <sys/timerfd.h>
 #include <unistd.h>
 
+/*
+Linux计时函数:
+time(2)/time_t 秒
+ftime(3)/struct timeb 毫秒
+gettimeofday(2)/struct timeval（微妙)
+clock_gettime(2)/struct timespec(纳秒)
+
+用gettimeofday来获取当前时间
+*/
+
+/*
+定时函数:
+sleep
+alarm
+usleep
+nanosleep
+clock_nanosleep
+gettimer/setitimer
+timer_create/timer_settime/timer_gettime/timer_delete
+timerfd_create/timerfd_gettime/timerfd_settime
+选用timerfd_*系列来做定时处理
+*/
+
 namespace YBASE
 {
     namespace net

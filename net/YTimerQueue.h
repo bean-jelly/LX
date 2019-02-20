@@ -23,7 +23,7 @@ namespace YBASE
             explicit TimerQueue(EventLoop* loop);
             ~TimerQueue();
 
-            TimerId AddTimer(TimerCallback cb, Timestamp when, double interval);
+            TimerId addTimer(TimerCallback cb, Timestamp when, double interval);
             void cancel(TimerId timerId);
         private:
             typedef std::pair<Timestamp, Timer*> Entry;
