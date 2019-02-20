@@ -57,7 +57,7 @@ void Channel::remove()
 void Channel::handleEvent(Timestamp receiveTime)
 {
     std::shared_ptr<void> guard;
-    it(tied_)
+    if(tied_)
     {
         guard = tie_.lock();
         if(guard)
