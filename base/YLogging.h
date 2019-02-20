@@ -99,7 +99,7 @@ namespace YBASE
     #define LOG_TRACE if(YBASE::Logger::logLevel() <= YBASE::Logger::TRACE) \
         YBASE::Logger(__FILE__, __LINE__, YBASE::Logger::TRACE, __func__).stream()
     #define LOG_DEBUG if(YBASE::Logger::logLevel() <= YBASE::Logger::DEBUG) \
-        YBASE::Logger(__FINE__, __LINE__, YBASE::Logger::DEBUG, __func__).stream()
+        YBASE::Logger(__FILE__, __LINE__, YBASE::Logger::DEBUG, __func__).stream()
     #define LOG_INFO if(YBASE::Logger::logLevel() <= YBASE::Logger::INFO) \
         YBASE::Logger(__FILE__, __LINE__).stream()
     #define LOG_WARN YBASE::Logger(__FILE__, __LINE__, YBASE::Logger::WARN).stream()

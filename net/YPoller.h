@@ -29,7 +29,7 @@ namespace YBASE
             
             virtual bool hasChannel(Channel* channel) const;
 
-            virtual Poller* newDefaultPoller(EventLoop* loop);
+            static Poller* newDefaultPoller(EventLoop* loop);
 
             void assertInLoopThread() const
             {
