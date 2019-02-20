@@ -11,7 +11,7 @@ set(net_SRCS
     YTimerQueue.cpp
 )
 
-add_library(lx_net &{net_SRCS})
+add_library(lx_net ${net_SRCS})
 target_link_libraries(lx_net lx_base)
 
 install(TARGETS lx_net DESTINATION lib)
