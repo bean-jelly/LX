@@ -124,17 +124,17 @@ namespace YBASE
 
             void retrieveInt64()
             {
-                retrieve(sizeof int64_t);
+                retrieve(sizeof(int64_t));
             }
 
             void retrieveInt16()
             {
-                retrieve(sizeof int16_t);
+                retrieve(sizeof(int16_t));
             }
 
             void retrieveInt8()
             {
-                retrieve(sizeof int8_t);
+                retrieve(sizeof(int8_t));
             }
 
             void retrieveAll()
@@ -202,24 +202,24 @@ namespace YBASE
             void appendInt64(int64_t x)
             {
                 int64_t be64 = sockets::hostToNetwork64(x);
-                append(&be64, sizeof be64);
+                append(&be64, sizeof(be64));
             }
 
             void appendInt32(int32_t x)
             {
                 int32_t be32 = sockets::hostToNetwork32(x);
-                append(&be32, sizeof be32);
+                append(&be32, sizeof(be32));
             }
 
             void appendInt16(int16_t x)
             {
                 int16_t be16 = sockets::hostToNetwork16(x);
-                append(&be16, sizeof be16);
+                append(&be16, sizeof(be16));
             }
 
             void appendInt8(int8_t x)
             {
-                append(&x, sizeof x);
+                append(&x, sizeof(x));
             }
 
             int64_t readIn64()
