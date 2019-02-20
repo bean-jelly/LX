@@ -41,8 +41,10 @@ namespace YBASE
         {
             int createTimerfd()
             {
-                int timerfd = ::timerfd_create(CLOCK_MONOTONIC,
-                                 TFD_NONBLOCK | TFD_CLOEXEC);
+                //CLOCK_REALTIME:系统实时时间,随系统实时时间改变而改变,即从UTC1970-1-1 0:0:0开始计时,中间时刻如果系统时间被用户改成其他,则对应的时间相应改变
+                //CLOCK_MONOTONIC:从系统启动这一刻起开始计时,不受系统时间被用户改变的影响
+                //flags：参数flags（TFD_NONBLOCK(非阻塞模式)/TFD_CLOEXEC（表示当程序执行exec函数时本fd将被系统自动关闭,表示不传递）
+                int timerfd = ::timerfd_create(CLOCK_MONOTONIC, TFD_NONBLOCK | TFD_CLOEXEC);
                 if (timerfd < 0)
                 {
                     LOG_SYSFATAL << "Failed in timerfd_create";
