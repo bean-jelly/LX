@@ -3,7 +3,7 @@
 
 #include <LX/base/YTimestamp.h>
 #include <functional>
-#include <memcory>
+#include <memory>
 
 namespace YBASE
 {
