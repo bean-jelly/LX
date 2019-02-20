@@ -139,7 +139,7 @@ int sockets::accept(int sockfd, struct sockaddr_in6* addr)
 
 int sockets::connect(int sockfd, const struct sockaddr* addr)
 {
-    return ::connect(socket, addr, static_cast<socklen_t>(sizeof(struct sockaddr_in6)));
+    return ::connect(sockfd, addr, static_cast<socklen_t>(sizeof(struct sockaddr_in6)));
 }
 
 ssize_t sockets::read(int sockfd, void* buf, size_t count)
