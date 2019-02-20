@@ -28,7 +28,7 @@ namespace YBASE
         private:
             typedef std::pair<Timestamp, Timer*> Entry;
             typedef std::set<Entry> TimerList;
-            typedef std::pair<Timer* int64_t> ActiveTimer;
+            typedef std::pair<Timer*, int64_t> ActiveTimer;
             typedef std::set<ActiveTimer> ActiveTimerSet;
 
             void addTimerInLoop(Timer* timer);

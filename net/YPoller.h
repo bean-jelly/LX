@@ -33,7 +33,7 @@ namespace YBASE
 
             void assertInLoopThread() const
             {
-                ownerLoop->assertInLoopThread();
+                ownerLoop_->assertInLoopThread();
             }
 
         protected:

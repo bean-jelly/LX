@@ -1,4 +1,5 @@
 #include <LX/net/YEventLoop.h>
+#include <LX/base/YLogging.h>
 #include <LX/base/YMutex.h>
 #include <LX/net/YChannel.h>
 #include <LX/net/YPoller.h>
@@ -221,7 +222,7 @@ void EventLoop::wakeup()
 
 void EventLoop::handleRead()
 {
-    uint64 one = 1;
+    uint64_t one = 1;
     ssize_t n = sockets::read(wakeupFd_, &one, sizeof one);
     if(n != sizeof one)
     {
