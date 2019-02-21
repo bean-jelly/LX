@@ -83,7 +83,7 @@ void EPollPoller::fillActiveChannels(int numEvents, ChannelList* activeChannels)
         assert(it->second == channel);
 #endif
         channel->set_revents(events_[i].events);
-        activeChannels_->push_back(channel);
+        activeChannels->push_back(channel);
     }
 }
 
@@ -97,7 +97,7 @@ void EPollPoller::updateChannel(Channel* channel)
         int fd = channel->fd();
         if(index == kNew)
         {
-            assert(channels_.find(fd) == channels_.end())
+            assert(channels_.find(fd) == channels_.end());
             channels_[fd] = channel;
         }
         else // index == kDeleted
@@ -112,7 +112,7 @@ void EPollPoller::updateChannel(Channel* channel)
     {
         // update existing one with EPOLL_CTL_MOD/DEL
         int fd = channel->fd();
-        //(void)fd;
+        (void)fd;
         assert(channels_.find(fd) != channels_.end());
         assert(channels_[fd] == channel);
         assert(index == kAdded);

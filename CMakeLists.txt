@@ -14,6 +14,7 @@ set(CXX_FLAGS
   -Wall
   -Wextra
   -Werror
+  -Werror=unused-variable
   -Wconversion
   -Wno-unused-parameter
   -Wold-style-cast
