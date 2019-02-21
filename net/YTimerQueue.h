@@ -43,7 +43,7 @@ namespace YBASE
             Channel timerfdChannel_;
             TimerList timers_;
 
-            ActiveTimerSet activeTimres_;
+            ActiveTimerSet activeTimers_;
             bool callingExpiredTimers_;
             ActiveTimerSet cancelingTimers_;
         };
