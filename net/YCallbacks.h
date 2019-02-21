@@ -31,7 +31,7 @@ namespace YBASE
             implicit_cast<From*, To*>(0);
         }
     #ifndef NDEBUG
-        assert(f == NULL || dynamic_cast<To*>(get_pointer(f)) != NULL)
+        assert(f == NULL || dynamic_cast<To*>(get_pointer(f)) != NULL);
     #endif
         return ::std::static_pointer_cast<To>(f);
     }
