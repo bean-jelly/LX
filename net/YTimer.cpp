@@ -3,7 +3,7 @@
 using namespace YBASE;
 using namespace YBASE::net;
 
-AtomiIn64 Timer::s_numCreated_;
+AtomiInt64 Timer::s_numCreated_;
 
 void Timer::restart(Timestamp now)
 {
