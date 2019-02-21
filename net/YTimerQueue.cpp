@@ -4,8 +4,8 @@
 
 #include <LX/base/YLogging.h>
 #include <LX/net/YEventLoop.h>
-#include <Lx/net/YTimer.h>
-#include <Lx/net/YTimerId.h>
+#include <LX/net/YTimer.h>
+#include <LX/net/YTimerId.h>
 
 #include <sys/timerfd.h>
 #include <unistd.h>
