@@ -1,0 +1,2 @@
+add_executable(testEventLoop testEventLoop.cc)
+target_link_libraries(testEventLoop lx_net)
