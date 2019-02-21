@@ -97,7 +97,7 @@ namespace YBASE
 
 using namespace YBASE;
 using namespace YBASE::net;
-using namespace YBASE::net::detail
+using namespace YBASE::net::detail;
 
 TimerQueue::TimerQueue(EventLoop* loop)
             : loop_(loop),
