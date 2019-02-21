@@ -3,6 +3,7 @@
 
 #include <LX/base/YStringPiece.h>
 #include <LX/base/YTypes.h>
+#include <LX/base/YNoncopyable.h>
 #include <LX/net/YCallbacks.h>
 #include <LX/net/YBuffer.h>
 #include <LX/net/YInetAddress.h>
