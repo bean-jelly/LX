@@ -1,6 +1,7 @@
 #ifndef __STDC_LIMIT_MACROS
 #define __STDC_LIMIT_MACROS
 #endif
+#include <LX/net/YTimerQueue.h>
 
 #include <LX/base/YLogging.h>
 #include <LX/net/YEventLoop.h>
