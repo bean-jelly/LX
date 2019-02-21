@@ -14,7 +14,7 @@ using namespace YBASE::net;
 void YBASE::net::defaultConnectionCallback(const TcpConnectionPtr& conn)
 {
     LOG_TRACE << conn->localAddress().toIpPort() << " ->"
-              << conn->perrAddress().toIpPort() << " is"
+              << conn->peerAddress().toIpPort() << " is"
               << (conn->connected() ? "UP" : "DOWN");
 }
 
@@ -24,7 +24,7 @@ void YBASE::net::defaultMessageCallback(const TcpConnectionPtr&, Buffer* buf, Ti
 }
 
 TcpConnection::TcpConnection(EventLoop* loop, const string& nameArg,
-                             int sockfd, const InetAddress& localAddr
+                             int sockfd, const InetAddress& localAddr,
                              const InetAddress& peerAddr)
     : loop_(CHECK_NOTNULL(loop)),
     state_(kConnecting),
@@ -167,7 +167,7 @@ void TcpConnection::shutown()
     if(state_ == kConnected)
     {
         setState(kDisconnecting);
-        loop->runInLoop(std::bind(&TcpConnection::shutdownInLoop, this));
+        loop_->runInLoop(std::bind(&TcpConnection::shutdownInLoop, this));
     }
 }
 

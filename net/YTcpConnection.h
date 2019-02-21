@@ -21,7 +21,8 @@ namespace YBASE
         class Socket;
 
         /// TCP connection, for both client and server usage.
-        class TcpConnection : noncopyable, public std::enable_shared_from_this<TcpConnection>
+        class TcpConnection:noncopyable,
+                            public std::enable_shared_from_this<TcpConnection>
         {
         public:
             TcpConnection(EventLoop* loop, const string& name, int sockfd, const InetAddress& localAddr, const InetAddress& peerAddr);
@@ -128,8 +129,8 @@ namespace YBASE
             const InetAddress           peerAddr_;
             ConnectionCallback          connectionCallback_;
             MessageCallback             messageCallback_;
-            WriteCompleteCallback       writeCompleCallback_;
-            HighWaterMarkCallback       hgihWaterMarkCallback_;
+            WriteCompleteCallback       writeCompleteCallback_;
+            HighWaterMarkCallback       highWaterMarkCallback_; 
             CloseCallback               closeCallback_;
             size_t                      highWaterMark_;
             
