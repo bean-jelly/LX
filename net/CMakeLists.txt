@@ -9,6 +9,8 @@ set(net_SRCS
     YTcpConnection.cpp
     YTimer.cpp
     YTimerQueue.cpp
+    poller/DefaultPoller.cc
+    poller/YEPollPoller.cpp
 )
 
 add_library(lx_net ${net_SRCS})

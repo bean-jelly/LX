@@ -67,7 +67,7 @@ namespace YBASE
             const int       fd_;        // 文件描述符，但不负责关闭该文件描述符
             int             events_;    // 关注的事件
             int             revents_;   // poll/epoll返回的事件
-            int             index_;     // 表示在poll的事件数组中的序号
+            int             index_;     // 表示在poll的事件数组中的序号 used by Poller.
             bool            logHup_;    // 表示某channel的状态
 
             std::weak_ptr<void> tie_;
