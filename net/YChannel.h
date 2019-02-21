@@ -2,6 +2,7 @@
 #define YBASE_CHANNEL_H
 
 #include <LX/base/YTimestamp.h>
+#include <LX/base/YNoncopyable.h>
 #include <functional>
 #include <memory>
 
