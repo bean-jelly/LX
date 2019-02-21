@@ -9,7 +9,7 @@ set(net_SRCS
     YTcpConnection.cpp
     YTimer.cpp
     YTimerQueue.cpp
-    poller/DefaultPoller.cc
+    poller/DefaultPoller.cpp
     poller/YEPollPoller.cpp
 )
 
