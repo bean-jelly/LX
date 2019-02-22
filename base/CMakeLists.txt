@@ -10,6 +10,9 @@ set(base_SRCS
     YTimeZone.cpp
     YThread.cpp
     YThreadPool.cpp
+    YAsyncLogging.cpp
+    YFileUtil.cpp
+    YProcessInfo.cpp
     )
 
 add_library(lx_base ${base_SRCS})
