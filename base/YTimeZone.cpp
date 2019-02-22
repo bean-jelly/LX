@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <strings.h>
 
-namespace YBASE
+namespace LX
 {
     namespace detail
     {
@@ -66,9 +66,9 @@ namespace YBASE
     }//namespace detail
 
     const int kSecondsPerDay = 24 * 60 * 60;
-}//namespace YBASE
+}//namespace LX
 
-using namespace YBASE;
+using namespace LX;
 using namespace std;
 
 struct TimeZone::Data
@@ -79,7 +79,7 @@ struct TimeZone::Data
     string                      abbreviation;
 };
 
-namespace YBASE
+namespace LX
 {
     namespace detail
     {
@@ -227,7 +227,7 @@ namespace YBASE
             return local;
         }
     }//namespace detail
-}//namespace YBASE
+}//namespace LX
 
 TimeZone::TimeZone(const char* zonefile) : data_(new TimeZone::Data)
 {

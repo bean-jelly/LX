@@ -9,8 +9,8 @@
 #include <stdint.h>
 #include <stdio.h>
 
-using namespace YBASE;
-using namespace YBASE::detail;
+using namespace LX;
+using namespace LX::detail;
 
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wtautological-compare"
@@ -18,7 +18,7 @@ using namespace YBASE::detail;
 #pragma GCC diagnostic ignored "-Wtype-limits"
 #endif
 
-namespace YBASE
+namespace LX
 {
     namespace detail
     {
@@ -71,7 +71,7 @@ namespace YBASE
         template class FixedBuffer<kSmallBuffer>;
         template class FixedBuffer<kLargeBuffer>;
     }//namespace detail
-}//namespace YBASE
+}//namespace LX
 
 template<int SIZE>
 const char* FixedBuffer<SIZE>::debugString()

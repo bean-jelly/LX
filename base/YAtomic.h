@@ -4,7 +4,7 @@
 #include <LX/base/YNoncopyable.h>
 #include <stdint.h>
 
-namespace YBASE
+namespace LX
 {
     namespace detail
     {

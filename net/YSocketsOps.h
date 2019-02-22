@@ -1,9 +1,9 @@
-#ifndef YBASE_SOCKETSOPS_H
-#define YBASE_SOCKETSOPS_H
+#ifndef LX_SOCKETSOPS_H
+#define LX_SOCKETSOPS_H
 
 #include <arpa/inet.h>
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {

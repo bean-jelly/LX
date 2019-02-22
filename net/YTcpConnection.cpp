@@ -8,17 +8,17 @@
 
 #include <errno.h>
 
-using namespace YBASE;
-using namespace YBASE::net;
+using namespace LX;
+using namespace LX::net;
 
-void YBASE::net::defaultConnectionCallback(const TcpConnectionPtr& conn)
+void LX::net::defaultConnectionCallback(const TcpConnectionPtr& conn)
 {
     LOG_TRACE << conn->localAddress().toIpPort() << " ->"
               << conn->peerAddress().toIpPort() << " is"
               << (conn->connected() ? "UP" : "DOWN");
 }
 
-void YBASE::net::defaultMessageCallback(const TcpConnectionPtr&, Buffer* buf, Timestamp)
+void LX::net::defaultMessageCallback(const TcpConnectionPtr&, Buffer* buf, Timestamp)
 {
     buf->retrieveAll();
 }

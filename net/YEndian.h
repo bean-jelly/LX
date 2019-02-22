@@ -1,10 +1,10 @@
-#ifndef YBASE_NET_ENDIAN_H
-#define YBASE_NET_ENDIAN_H
+#ifndef LX_NET_ENDIAN_H
+#define LX_NET_ENDIAN_H
 
 #include <stdint.h>
 #include <endian.h>
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {

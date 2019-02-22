@@ -23,7 +23,7 @@
 线程tid: pthread_self()         //进程内唯一，但是在不同进程则不唯一。
 线程pid: syscall(SYS_gettid)    //系统内是唯一的
 */
-namespace YBASE
+namespace LX
 {
     namespace CurrentThread
     {
@@ -49,8 +49,8 @@ namespace YBASE
         void afterFork()
         {
             //为什么要赋值为0和main，因为fork可能在主线程中调用，也可能在子线程中调用。fork得到一个新进程，
-            YBASE::CurrentThread::t_cachedTid = 0;
-            YBASE::CurrentThread::t_threadName = "main";
+            LX::CurrentThread::t_cachedTid = 0;
+            LX::CurrentThread::t_threadName = "main";
             CurrentThread::tid();
         }
     
@@ -58,7 +58,7 @@ namespace YBASE
         {
         public:
             ThreadNameInitializer(){
-                YBASE::CurrentThread::t_threadName = "main";
+                LX::CurrentThread::t_threadName = "main";
                 /*
                 pthread_atfork(void (*prepare)(void），void (*parent)(void）, void(*child)(void))
                 prepare在父进程fork创建子进程之前调用，这里可以获取父进程定义的所有锁；
@@ -74,7 +74,7 @@ namespace YBASE
         
         struct ThreadData
         {
-            typedef YBASE::Thread::ThreadFunc ThreadFunc;
+            typedef LX::Thread::ThreadFunc ThreadFunc;
             ThreadFunc func_;
             std::string name_;
             pid_t* tid_;
@@ -84,31 +84,31 @@ namespace YBASE
 
             void runInThread()
             {
-                *tid_ = YBASE::CurrentThread::tid();
+                *tid_ = LX::CurrentThread::tid();
                 tid_ = NULL;
                 latch_->countDown();
                 latch_ = NULL;
 
-                YBASE::CurrentThread::t_threadName = name_.empty() ? "YThread" : name_.c_str();
-                ::prctl(PR_SET_NAME,YBASE::CurrentThread::t_threadName);
+                LX::CurrentThread::t_threadName = name_.empty() ? "YThread" : name_.c_str();
+                ::prctl(PR_SET_NAME,LX::CurrentThread::t_threadName);
                 try
                 {
                     func_();
-                    YBASE::CurrentThread::t_threadName = "finished";
+                    LX::CurrentThread::t_threadName = "finished";
                 }
                 catch(const Exception& ex)
                 {
-                    YBASE::CurrentThread::t_threadName = "crashed";
+                    LX::CurrentThread::t_threadName = "crashed";
                     abort();
                 }
                 catch(const std::exception& ex)
                 {
-                    YBASE::CurrentThread::t_threadName = "crashed";
+                    LX::CurrentThread::t_threadName = "crashed";
                     abort();
                 }
                 catch(...)
                 {
-                    YBASE::CurrentThread::t_threadName = "crashed";
+                    LX::CurrentThread::t_threadName = "crashed";
                     throw;
                 }
             }
@@ -125,7 +125,7 @@ namespace YBASE
     /*detail -----------------------------------------------------------------------------*/
 }
 
-using namespace YBASE;
+using namespace LX;
 
 void CurrentThread::cacheTid()
 {
@@ -211,7 +211,7 @@ int Thread::join()
 int main()
 {
     std::string name = "yan";
-    YBASE::Thread thread_t(say, name);
+    LX::Thread thread_t(say, name);
     thread_t.start();
     thread_t.join();
 

@@ -1,5 +1,5 @@
-#ifndef YBASE_THREAD_H
-#define YBASE_THREAD_H
+#ifndef LX_THREAD_H
+#define LX_THREAD_H
 
 #include <LX/base/YAtomic.h>
 #include <LX/base/YCountDownLatch.h>
@@ -10,7 +10,7 @@
 #include <pthread.h>
 #include <string>
 
-namespace YBASE
+namespace LX
 {
     class Thread : noncopyable
     {

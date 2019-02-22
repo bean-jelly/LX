@@ -34,7 +34,7 @@ timerfd_create/timerfd_gettime/timerfd_settime
 选用timerfd_*系列来做定时处理
 */
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {
@@ -96,9 +96,9 @@ namespace YBASE
     }
 }
 
-using namespace YBASE;
-using namespace YBASE::net;
-using namespace YBASE::net::detail;
+using namespace LX;
+using namespace LX::net;
+using namespace LX::net::detail;
 
 TimerQueue::TimerQueue(EventLoop* loop)
             : loop_(loop),

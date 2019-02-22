@@ -1,5 +1,5 @@
-#ifndef YBASE_NET_TCPCONNECTION_H
-#define YBASE_NET_TCPCONNECTION_H
+#ifndef LX_NET_TCPCONNECTION_H
+#define LX_NET_TCPCONNECTION_H
 
 #include <LX/base/YStringPiece.h>
 #include <LX/base/YTypes.h>
@@ -13,7 +13,7 @@
 
 struct tcp_info;
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {

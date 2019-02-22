@@ -1,4 +1,4 @@
-#ifndef YBASE_NET_TIMERQUEUE_H
+#ifndef LX_NET_TIMERQUEUE_H
 #define YABSE_NET_TIMERQUEUE_H
 
 #include <set>
@@ -9,7 +9,7 @@
 #include <LX/net/YCallbacks.h>
 #include <LX/net/YChannel.h>
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {

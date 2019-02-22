@@ -1,5 +1,5 @@
-#ifndef YBASE_BLOCKINGQUEUE_H
-#define YBASE_BLOCKINGQUEUE_H
+#ifndef LX_BLOCKINGQUEUE_H
+#define LX_BLOCKINGQUEUE_H
 
 #include <LX/base/YCondition.h>
 #include <LX/base/YMutex.h>
@@ -8,7 +8,7 @@
 #include <queue>
 #include <assert.h>
 
-namespace YBASE
+namespace LX
 {
     template<typename T>
     class BlockingQueue : boost::noncopyable

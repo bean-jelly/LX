@@ -1,5 +1,5 @@
-#ifndef YBASE_NET_POLLER_EPOLLPOLLER_H
-#define YBASE_NET_POLLER_EPOLLPOLLER_H
+#ifndef LX_NET_POLLER_EPOLLPOLLER_H
+#define LX_NET_POLLER_EPOLLPOLLER_H
 
 #include <LX/net/YPoller.h>
 
@@ -20,7 +20,7 @@ struct epoll_event {
 };
 */
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {

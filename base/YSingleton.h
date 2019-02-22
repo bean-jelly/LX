@@ -1,5 +1,5 @@
-#ifndef YBASE_SINGLETON_H
-#define YBASE_SINGLETON_H
+#ifndef LX_SINGLETON_H
+#define LX_SINGLETON_H
 
 /*
 生产代码中的线程的等待可分为两种，一种是等待资源可用；一种是等待进入临界区（mutex上）以便读写数据，
@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-namespace YBASE
+namespace LX
 {
     namespace detail
     {

@@ -1,5 +1,5 @@
-#ifndef YBASE_LOGSTREAM_H
-#define YBASE_LOGSTREAM_H
+#ifndef LX_LOGSTREAM_H
+#define LX_LOGSTREAM_H
 
 #include <LX/base/YNoncopyable.h>
 #include <LX/base/YStringPiece.h>
@@ -7,7 +7,7 @@
 #include <assert.h>
 #include <string.h>
 
-namespace YBASE
+namespace LX
 {
     namespace detail
     {

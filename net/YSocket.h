@@ -1,11 +1,11 @@
-#ifndef YBASE_NET_SOCKET_H
-#define YBASE_NET_SOCKET_H
+#ifndef LX_NET_SOCKET_H
+#define LX_NET_SOCKET_H
 
 #include <LX/base/YNoncopyable.h>
 
 struct tcp_info;
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {

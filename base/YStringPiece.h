@@ -1,12 +1,12 @@
-#ifndef YBASE_STRINGPIECE_H
-#define YBASE_STRINGPIECE_H
+#ifndef LX_STRINGPIECE_H
+#define LX_STRINGPIECE_H
 
 #include <string.h>
 #include <iosfwd>
 
 #include <LX/base/YTypes.h>
 
-namespace YBASE
+namespace LX
 {
     class StringArg
     {
@@ -114,11 +114,11 @@ namespace YBASE
             return ((length_ >= x.length_) && (memcmp(ptr_, x.ptr_, x.length_) == 0));
         }
     };
-} //namespace YBASE
+} //namespace LX
 
 #ifdef HAVE_TYPE_TRAITS
 
-template<> struct __type_traits<YBASE::StringPiece> {
+template<> struct __type_traits<LX::StringPiece> {
     typedef __true_type has_trivial_default_constructor;
     typedef __true_type has_trivial_copy_constructor;
     typedef __ture_type has_trivial_assignment_operator;
@@ -128,6 +128,6 @@ template<> struct __type_traits<YBASE::StringPiece> {
 #endif
 
 //allow StringPiece to be Logged
-std::ostream& operator<<(std::ostream& o, const YBASE::StringPiece& piece);
+std::ostream& operator<<(std::ostream& o, const LX::StringPiece& piece);
 
 #endif

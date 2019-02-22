@@ -1,5 +1,5 @@
-#ifndef YBASE_NET_EVENTLOOP_H
-#define YBASE_NET_EVENTLOOP_H
+#ifndef LX_NET_EVENTLOOP_H
+#define LX_NET_EVENTLOOP_H
 
 #include <atomic>
 #include <functional>
@@ -13,7 +13,7 @@
 #include <LX/net/YCallbacks.h>
 #include <LX/net/YTimerId.h>
 
-namespace YBASE
+namespace LX
 {
 namespace net
 {

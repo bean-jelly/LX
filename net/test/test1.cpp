@@ -6,8 +6,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
-using namespace YBASE;
-using namespace YBASE::net;
+using namespace LX;
+using namespace LX::net;
 
 int cnt = 0;
 EventLoop *g_loop;

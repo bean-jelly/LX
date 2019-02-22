@@ -4,7 +4,7 @@
 #include <assert.h>
 #include <stdio.h>
 
-using namespace YBASE;
+using namespace LX;
 
 ThreadPool::ThreadPool(const string& nameArg):mutex_(),
                                               notEmpty_(mutex_),

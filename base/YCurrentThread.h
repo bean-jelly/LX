@@ -1,5 +1,5 @@
-#ifndef YBASE_CURRENTTHREAD_H
-#define YBASE_CURRENTTHREAD_H
+#ifndef LX_CURRENTTHREAD_H
+#define LX_CURRENTTHREAD_H
 
 #include <LX/base/YTypes.h>
 #include <stdint.h>
@@ -13,7 +13,7 @@
 #define LIKELY(x)     __builtin_expect(!!(x), 1) //x很可能为真
 #define UNLIKELY(x)   __builtin_expect(!!(x), 0) //x很可能为假
 
-namespace YBASE
+namespace LX
 {
     namespace CurrentThread
     {

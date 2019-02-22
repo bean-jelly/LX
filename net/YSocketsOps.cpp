@@ -11,8 +11,8 @@
 #include <sys/uio.h>
 #include <unistd.h>
 
-using namespace YBASE;
-using namespace YBASE::net;
+using namespace LX;
+using namespace LX::net;
 
 namespace
 {

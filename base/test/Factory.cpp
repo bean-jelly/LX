@@ -33,7 +33,7 @@ namespace version1
     public:
         boost::shared_ptr<Stock> get(const string& key)
         {
-            YBASE::MutexLockGuard lock(mutex_);
+            LX::MutexLockGuard lock(mutex_);
             boost::shared_ptr<Stock>& pStock = stocks_[key];
             if(!pStock)
             {
@@ -42,7 +42,7 @@ namespace version1
             return pStock;
         }
     private:
-        mutable YBASE::MutexLock mutex_;
+        mutable LX::MutexLock mutex_;
         std::map<string, boost::shared_ptr<Stock> > stocks_;
     };
 }
@@ -55,7 +55,7 @@ namespace version2
         boost::shared_ptr<Stock> get(const string& key)
         {
             boost::shared_ptr<Stock> pStock;
-            YBASE::MutexLockGuard lock(mutex_);
+            LX::MutexLockGuard lock(mutex_);
             boost::weak_ptr<Stock>& wkStock = stocks_[key];
             pStock = wkStock.lock();
             if(!pStock)
@@ -66,7 +66,7 @@ namespace version2
             return pStock;
         }
     private:
-        mutable YBASE::MutexLock mutex_;
+        mutable LX::MutexLock mutex_;
         std::map<string, boost::weak_ptr<Stock> > stocks_;
     };
 }
@@ -79,7 +79,7 @@ namespace version3
         boost::shared_ptr<Stock> get(const string& key)
         {
             boost::shared_ptr<Stock> pStock;
-            YBASE::MutexLockGuard lock(mutex_);
+            LX::MutexLockGuard lock(mutex_);
             boost::weak_ptr<Stock>& wkStock = stocks_[key];
             pStock = wkStock.lock();
             if(!pStock)
@@ -95,12 +95,12 @@ namespace version3
             printf("deleteStock[%p]\n", stock);
             if(stock)
             {
-                YBASE::MutexLockGuard lock(mutex_);
+                LX::MutexLockGuard lock(mutex_);
                 stocks_.erase(stock->key());
             }
             delete stock;
         }
-        mutable YBASE::MutexLock mutex_;
+        mutable LX::MutexLock mutex_;
         std::map<string, boost::weak_ptr<Stock> >stocks_;
     };
 }
@@ -113,7 +113,7 @@ namespace version4
          boost::shared_ptr<Stock> get(const string& key)
         {
             boost::shared_ptr<Stock> pStock;
-            YBASE::MutexLockGuard lock(mutex_);
+            LX::MutexLockGuard lock(mutex_);
             boost::weak_ptr<Stock>& wkStock = stocks_[key];
             pStock = wkStock.lock();
             if (!pStock)
@@ -132,12 +132,12 @@ namespace version4
             printf("deleteStock[%p]\n", stock);
             if (stock)
             {
-                YBASE::MutexLockGuard lock(mutex_);
+                LX::MutexLockGuard lock(mutex_);
                 stocks_.erase(stock->key());  // This is wrong, see removeStock below for correct implementation.
             }
             delete stock;  // sorry, I lied
         }
-        mutable YBASE::MutexLock mutex_;
+        mutable LX::MutexLock mutex_;
         std::map<string, boost::weak_ptr<Stock> > stocks_;
     };
 }
@@ -148,7 +148,7 @@ public:
     boost::shared_ptr<Stock> get(const string& key)
     {
         boost::shared_ptr<Stock> pStock;
-        YBASE::MutexLockGuard lock(mutex_);
+        LX::MutexLockGuard lock(mutex_);
         boost::weak_ptr<Stock>& wkStock = stocks_[key];
         pStock = wkStock.lock();
         if(!pStock)
@@ -180,7 +180,7 @@ private:
     {
         if(stock)
         {
-            YBASE::MutexLockGuard lock(mutex_);
+            LX::MutexLockGuard lock(mutex_);
             auto it = stocks_.find(stock->key());
             assert(it != stocks_.end());
             if(it->second.expired())
@@ -190,7 +190,7 @@ private:
         }
     }
 private:
-    mutable YBASE::MutexLock mutex_;
+    mutable LX::MutexLock mutex_;
     std::map<string, boost::weak_ptr<Stock> > stocks_;
 };
 

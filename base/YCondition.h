@@ -1,10 +1,10 @@
-#ifndef YBASE_CONDITION_H
-#define YBASE_CONDITION_H
+#ifndef LX_CONDITION_H
+#define LX_CONDITION_H
 
 #include <LX/base/YMutex.h>
 #include <pthread.h>
 
-namespace YBASE
+namespace LX
 {
     class Condition : noncopyable
     {

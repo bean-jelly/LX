@@ -1,5 +1,5 @@
-#ifndef YBASE_NET_BUFFER_H
-#define YBASE_NET_BUFFER_H
+#ifndef LX_NET_BUFFER_H
+#define LX_NET_BUFFER_H
 
 #include <LX/base/YCopyable.h>
 #include <LX/base/YStringPiece.h>
@@ -13,7 +13,7 @@
 #include <string.h>
 #include <unistd.h>
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {
@@ -25,7 +25,7 @@ namespace YBASE
         /// |                   |                  |                  |
         /// 0      <=      readerIndex   <=   writerIndex    <=     size
         /// @endcode
-        class Buffer : public YBASE::copyable
+        class Buffer : public LX::copyable
         {
         public:
             static const size_t kCheapPrepend = 8;

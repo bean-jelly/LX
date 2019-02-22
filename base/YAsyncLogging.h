@@ -1,5 +1,5 @@
-#ifndef YBASE_ASYNCLOGGING_H
-#define YBASE_ASYNCLOGGING_H
+#ifndef LX_ASYNCLOGGING_H
+#define LX_ASYNCLOGGING_H
 
 #include <LX/base/YBlockingQueue.h>
 #include <LX/base/YBoundedBlockingQueue.h>
@@ -11,7 +11,7 @@
 #include <atomic>
 #include <vector>
 
-namespace YBASE
+namespace LX
 {
     class AsyncLogging:noncopyable
     {
@@ -42,7 +42,7 @@ namespace YBASE
     private:
         void threadFunc();
 
-        typedef YBASE::detail::FixedBuffer<YBASE::detail::kLargeBuffer> Buffer;
+        typedef LX::detail::FixedBuffer<LX::detail::kLargeBuffer> Buffer;
         typedef std::vector<std::unique_ptr<Buffer>> BufferVector;
         typedef BufferVector::value_type BufferPtr;
 
@@ -50,13 +50,13 @@ namespace YBASE
         std::atomic<bool>       running_;
         std::string             basename_;
         off_t                   rollSize_;
-        YBASE::Thread           thread_;
-        YBASE::MutexLock        mutex_;
-        YBASE::CountDownLatch   latch_;
-        YBASE::Condition        cond_;
-        BufferPtr               currentBuffer_;
-        BufferPtr               nextBuffer_;
-        BufferVector            buffers_;
+        LX::Thread           thread_;
+        LX::MutexLock        mutex_;
+        LX::CountDownLatch   latch_;
+        LX::Condition        cond_;
+        BufferPtr               currentBuffer_;     //当前缓冲区
+        BufferPtr               nextBuffer_;        //预备缓冲
+        BufferVector            buffers_;           //待写入文件的已填满的缓冲（供后端写入的buffer）
     };
 }
 

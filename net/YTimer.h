@@ -1,11 +1,11 @@
-#ifndef YBASE_NET_TIMER_H
-#define YBASE_NET_TIMER_H
+#ifndef LX_NET_TIMER_H
+#define LX_NET_TIMER_H
 
 #include <LX/base/YAtomic.h>
 #include <LX/base/YTimestamp.h>
 #include <LX/net/YCallbacks.h>
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {

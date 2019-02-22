@@ -1,12 +1,12 @@
-#ifndef YBASE_DATE_H
-#define YBASE_DATE_H
+#ifndef LX_DATE_H
+#define LX_DATE_H
 
 #include <LX/base/YCopyable.h>
 #include <LX/base/YTypes.h>
 
 struct tm;
 
-namespace YBASE
+namespace LX
 {
     class Date : public copyable
     {

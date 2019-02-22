@@ -1,12 +1,12 @@
-#ifndef YBASE_INETADDRESS_H
-#define YBASE_INETADDRESS_H
+#ifndef LX_INETADDRESS_H
+#define LX_INETADDRESS_H
 
 #include <LX/base/YCopyable.h>
 #include <LX/base/YStringPiece.h>
 
 #include <netinet/in.h>
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {
@@ -15,7 +15,7 @@ namespace YBASE
             const struct sockaddr* sockaddr_cast(const struct sockaddr_in6* addr);
         }
 
-        class InetAddress : public YBASE::copyable
+        class InetAddress : public LX::copyable
         {
         public:
             explicit InetAddress(uint16_t port = 0, bool loopbackOnly = false, bool ipv6 = false);

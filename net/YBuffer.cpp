@@ -4,8 +4,8 @@
 #include <errno.h>
 #include <sys/uio.h>
 
-using namespace YBASE;
-using namespace YBASE::net;
+using namespace LX;
+using namespace LX::net;
 
 const char Buffer::kCRLF[] = "\r\n";
 const size_t Buffer::kCheapPrepend;

@@ -3,7 +3,7 @@
 #include <execinfo.h>
 #include <stdlib.h>
 
-using namespace YBASE;
+using namespace LX;
 
 Exception::Exception(const char* msg) : message_(msg)
 {

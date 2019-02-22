@@ -1,7 +1,7 @@
 #include <LX/net/YTimer.h>
 
-using namespace YBASE;
-using namespace YBASE::net;
+using namespace LX;
+using namespace LX::net;
 
 AtomicInt64 Timer::s_numCreated_;
 

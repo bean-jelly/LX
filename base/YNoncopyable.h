@@ -1,7 +1,7 @@
-#ifndef YBASE_NONCOPYABLE_H
-#define YBASE_NONCOPYABLE_H
+#ifndef LX_NONCOPYABLE_H
+#define LX_NONCOPYABLE_H
 
-namespace YBASE
+namespace LX
 {
     class noncopyable
     {

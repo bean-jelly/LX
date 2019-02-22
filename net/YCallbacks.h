@@ -1,11 +1,11 @@
-#ifndef YBASE_NET_CALLBACKS_H
-#define YBASE_NET_CALLBACKS_H
+#ifndef LX_NET_CALLBACKS_H
+#define LX_NET_CALLBACKS_H
 
 #include <LX/base/YTimestamp.h>
 #include <functional>
 #include <memory>
 
-namespace YBASE
+namespace LX
 {
     using std::placeholders::_1;
     using std::placeholders::_2;

@@ -8,7 +8,7 @@
 
 void print()
 {
-    printf("tid = %d\n", YBASE::CurrentThread::tid());
+    printf("tid = %d\n", LX::CurrentThread::tid());
 }
 
 void printString(const std::string& str)
@@ -20,7 +20,7 @@ void printString(const std::string& str)
 void test(int maxSize)
 {
     LOG_WARN << "Test ThreadPool with max queue size = " << maxSize;
-    YBASE::ThreadPool pool("MainThreadPool");
+    LX::ThreadPool pool("MainThreadPool");
     pool.setMaxQueueSize(maxSize);
     pool.start(5);
 
@@ -35,8 +35,8 @@ void test(int maxSize)
     }
     LOG_WARN << "Done";
 
-    YBASE::CountDownLatch latch(1);
-    pool.run(std::bind(&YBASE::CountDownLatch::countDown, &latch));
+    LX::CountDownLatch latch(1);
+    pool.run(std::bind(&LX::CountDownLatch::countDown, &latch));
     latch.wait();
     pool.stop();
 }

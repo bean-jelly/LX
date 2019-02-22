@@ -1,7 +1,7 @@
 #include <LX/base/YCondition.h>
 #include <errno.h>
 
-bool YBASE::Condition::waitForSeconds(double seconds)
+bool LX::Condition::waitForSeconds(double seconds)
 {
     struct timespec abstime;
     clock_gettime(CLOCK_REALTIME, &abstime);

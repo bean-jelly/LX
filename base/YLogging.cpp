@@ -8,7 +8,7 @@
 #include <string.h>
 #include <sstream>
 
-namespace YBASE
+namespace LX
 {
     __thread char t_errnobuf[512];
     __thread char t_time[64];
@@ -21,9 +21,9 @@ namespace YBASE
 
     Logger::LogLevel initLogLevel()
     {
-        if (::getenv("YBASE_LOG_TRACE"))
+        if (::getenv("LX_LOG_TRACE"))
             return Logger::TRACE;
-        else if (::getenv("YBASE_LOG_DEBUG"))
+        else if (::getenv("LX_LOG_DEBUG"))
             return Logger::DEBUG;
         else
             return Logger::INFO;
@@ -80,9 +80,9 @@ namespace YBASE
     Logger::OutputFunc g_output = defaultOutput;
     Logger::FlushFunc g_flush = defaultFlush;
     TimeZone g_logTimeZone;
-}// namespace YBASE
+}// namespace LX
 
-using namespace YBASE;
+using namespace LX;
 
 Logger::Impl::Impl(LogLevel level, int savedErrno, const SourceFile& file, int line)
 :   time_(Timestamp::now()),

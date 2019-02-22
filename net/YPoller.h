@@ -1,5 +1,5 @@
-#ifndef YBASE_NET_POLLER_H
-#define YBASE_NET_POLLER_H
+#ifndef LX_NET_POLLER_H
+#define LX_NET_POLLER_H
 
 #include <map>
 #include <vector>
@@ -7,7 +7,7 @@
 #include <LX/base/YTimestamp.h>
 #include <LX/net/YEventLoop.h>
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {

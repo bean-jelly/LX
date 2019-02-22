@@ -3,7 +3,7 @@
 #include <boost/shared_ptr.hpp>
 #include <stdio.h>
 
-using namespace YBASE;
+using namespace LX;
 
 class Foo
 {

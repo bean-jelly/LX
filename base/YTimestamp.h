@@ -1,13 +1,13 @@
-#ifndef YBASE_TIMESTAMP_H
-#define YBASE_TIMESTAMP_H
+#ifndef LX_TIMESTAMP_H
+#define LX_TIMESTAMP_H
 
 #include <LX/base/YCopyable.h>
 #include <LX/base/YTypes.h>
 #include <boost/operators.hpp>
 
-namespace YBASE
+namespace LX
 {
-    class Timestamp :   public YBASE::copyable,
+    class Timestamp :   public LX::copyable,
                         public boost::equality_comparable<Timestamp>,
                         public boost::less_than_comparable<Timestamp>
     {

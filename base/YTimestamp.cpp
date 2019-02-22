@@ -9,7 +9,7 @@
 //inttypes.h是标准C函数库的头文件，提供整数输入的各种转换宏
 #include <inttypes.h>
 
-using namespace YBASE;
+using namespace LX;
 
 static_assert(sizeof(Timestamp) == sizeof(int64_t), "Timestamp is same size as int64_t");
 

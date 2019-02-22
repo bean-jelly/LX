@@ -1,13 +1,13 @@
-#ifndef YBASE_TIMEZONE_H
-#define YBASE_TIMEZONE_H
+#ifndef LX_TIMEZONE_H
+#define LX_TIMEZONE_H
 
 #include <LX/base/YCopyable.h>
 #include <memory>
 #include <time.h>
 
-namespace YBASE
+namespace LX
 {
-    class TimeZone : public YBASE::copyable
+    class TimeZone : public LX::copyable
     {
     public:
         explicit TimeZone(const char* zonefile);

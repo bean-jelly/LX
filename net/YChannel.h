@@ -1,12 +1,12 @@
-#ifndef YBASE_CHANNEL_H
-#define YBASE_CHANNEL_H
+#ifndef LX_CHANNEL_H
+#define LX_CHANNEL_H
 
 #include <LX/base/YTimestamp.h>
 #include <LX/base/YNoncopyable.h>
 #include <functional>
 #include <memory>
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {

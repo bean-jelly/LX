@@ -1,10 +1,10 @@
-#ifndef YBASE_EXCEPTION_H
-#define YBASE_EXCEPTION_H
+#ifndef LX_EXCEPTION_H
+#define LX_EXCEPTION_H
 
 #include <LX/base/YTypes.h>
 #include <exception>
 
-namespace YBASE
+namespace LX
 {
     class Exception:public std::exception
     {
@@ -23,4 +23,4 @@ namespace YBASE
     };
 }
 
-#endif //YBASE_EXCEPTION_H
+#endif //LX_EXCEPTION_H

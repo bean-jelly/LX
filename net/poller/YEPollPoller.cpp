@@ -9,8 +9,8 @@
 #include <sys/epoll.h>
 #include <unistd.h>
 
-using namespace YBASE;
-using namespace YBASE::net;
+using namespace LX;
+using namespace LX::net;
 
 static_assert(EPOLLIN == POLLIN,        "epoll uses same flag values as poll");
 static_assert(EPOLLPRI == POLLPRI,      "epoll uses same flag values as poll");

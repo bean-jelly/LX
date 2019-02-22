@@ -1,7 +1,7 @@
 #include <LX/base/YDate.h>
 #include <stdio.h>
 
-namespace YBASE
+namespace LX
 {
     namespace detail
     {
@@ -32,10 +32,10 @@ namespace YBASE
         }
     } //namespace detail
     const int Date::kJulianDayOf1970_01_01 = detail::getJulianDayNumber(19710, 1, 1);
-}//namespace YBASE
+}//namespace LX
 
-using namespace YBASE;
-using namespace YBASE::detail;
+using namespace LX;
+using namespace LX::detail;
 
 Date::Date(int y, int m, int d) : julianDayNumber_(getJulianDayNumber(y, m, d)) {}
 

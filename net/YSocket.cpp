@@ -8,8 +8,8 @@
 #include <strings.h>    //bzero
 #include <stdio.h>      //snprintf
 
-using namespace YBASE;
-using namespace YBASE::net;
+using namespace LX;
+using namespace LX::net;
 
 Socket::~Socket()
 {

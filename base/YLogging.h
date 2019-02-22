@@ -1,10 +1,10 @@
-#ifndef YBASE_LOGGING_H
-#define YBASE_LOGGING_H
+#ifndef LX_LOGGING_H
+#define LX_LOGGING_H
 
 #include <LX/base/YLogStream.h>
 #include <LX/base/YTimestamp.h>
 
-namespace YBASE
+namespace LX
 {
     class TimeZone;
 
@@ -96,24 +96,24 @@ namespace YBASE
 
     //非常的关键，这里的宏用Logger(__FILE__,__LINE__,XX)创建一个临时对象来输出，输出完了
     //可以立即销毁，不然的话，后打印的log会先输出，因为退出生命周期后，先声明的对象最后销毁
-    #define LOG_TRACE if(YBASE::Logger::logLevel() <= YBASE::Logger::TRACE) \
-        YBASE::Logger(__FILE__, __LINE__, YBASE::Logger::TRACE, __func__).stream()
-    #define LOG_DEBUG if(YBASE::Logger::logLevel() <= YBASE::Logger::DEBUG) \
-        YBASE::Logger(__FILE__, __LINE__, YBASE::Logger::DEBUG, __func__).stream()
-    #define LOG_INFO if(YBASE::Logger::logLevel() <= YBASE::Logger::INFO) \
-        YBASE::Logger(__FILE__, __LINE__).stream()
-    #define LOG_WARN YBASE::Logger(__FILE__, __LINE__, YBASE::Logger::WARN).stream()
-    #define LOG_ERROR YBASE::Logger(__FILE__, __LINE__, YBASE::Logger::ERROR).stream()
-    #define LOG_FATAL YBASE::Logger(__FILE__, __LINE__, YBASE::Logger::FATAL).stream()
-    #define LOG_SYSERR YBASE::Logger(__FILE__, __LINE__, false).stream()
-    #define LOG_SYSFATAL YBASE::Logger(__FILE__, __LINE__, true).stream()
+    #define LOG_TRACE if(LX::Logger::logLevel() <= LX::Logger::TRACE) \
+        LX::Logger(__FILE__, __LINE__, LX::Logger::TRACE, __func__).stream()
+    #define LOG_DEBUG if(LX::Logger::logLevel() <= LX::Logger::DEBUG) \
+        LX::Logger(__FILE__, __LINE__, LX::Logger::DEBUG, __func__).stream()
+    #define LOG_INFO if(LX::Logger::logLevel() <= LX::Logger::INFO) \
+        LX::Logger(__FILE__, __LINE__).stream()
+    #define LOG_WARN LX::Logger(__FILE__, __LINE__, LX::Logger::WARN).stream()
+    #define LOG_ERROR LX::Logger(__FILE__, __LINE__, LX::Logger::ERROR).stream()
+    #define LOG_FATAL LX::Logger(__FILE__, __LINE__, LX::Logger::FATAL).stream()
+    #define LOG_SYSERR LX::Logger(__FILE__, __LINE__, false).stream()
+    #define LOG_SYSFATAL LX::Logger(__FILE__, __LINE__, true).stream()
 
     const char* strerror_tl(int savedErrno);
 
 
     //check that the input is non null.
     #define CHECK_NOTNULL(val) \
-        ::YBASE::CheckNotNull(__FILE__, __LINE__, "'" #val "' Must be non NULL", (val))
+        ::LX::CheckNotNull(__FILE__, __LINE__, "'" #val "' Must be non NULL", (val))
 
     template<typename T>
     T* CheckNotNull(Logger::SourceFile file, int line, const char *names, T* ptr)

@@ -1,8 +1,8 @@
 #include <LX/net/YPoller.h>
 #include <LX/net/YChannel.h>
 
-using namespace YBASE;
-using namespace YBASE::net;
+using namespace LX;
+using namespace LX::net;
 
 Poller::Poller(EventLoop* loop) : ownerLoop_(loop)
 {

@@ -1,5 +1,5 @@
-#ifndef YBASE_TYPES_H
-#define YBASE_TYPES_H
+#ifndef LX_TYPES_H
+#define LX_TYPES_H
 
 #include <stdint.h>
 #include <string.h>
@@ -9,7 +9,7 @@
 #include <assert.h>
 #endif
 
-namespace YBASE
+namespace LX
 {
     using std::string;
 

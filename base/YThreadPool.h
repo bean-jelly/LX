@@ -1,5 +1,5 @@
-#ifndef YBASE_THREADPOOL_H
-#define YBASE_THREADPOOL_H
+#ifndef LX_THREADPOOL_H
+#define LX_THREADPOOL_H
 
 #include <LX/base/YCondition.h>
 #include <LX/base/YMutex.h>
@@ -9,7 +9,7 @@
 #include <deque>
 #include <vector>
 
-namespace YBASE
+namespace LX
 {
     class ThreadPool : noncopyable
     {
@@ -39,7 +39,7 @@ namespace YBASE
         Condition notFull_;
         string name_;
         Task threadInitCallback_;
-        std::vector<std::unique_ptr<YBASE::Thread> > threads_;
+        std::vector<std::unique_ptr<LX::Thread> > threads_;
         std::deque<Task> Taskqueue_;
         size_t maxQueueSize_;
         bool running_;

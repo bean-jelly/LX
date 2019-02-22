@@ -1,15 +1,15 @@
-#ifndef YBASE_NET_TIMERID_H
-#define YBASE_NET_TIMERID_H
+#ifndef LX_NET_TIMERID_H
+#define LX_NET_TIMERID_H
 
 #include <LX/base/YCopyable.h>
 
-namespace YBASE
+namespace LX
 {
     namespace net
     {
         class Timer;
 
-        class TimerId : public YBASE::copyable
+        class TimerId : public LX::copyable
         {
         public:
             TimerId():timer_(NULL), sequence_(0){}

@@ -1,12 +1,12 @@
-#ifndef YBASE_LOGFILE_H
-#define YBASE_LOGFILE_H
+#ifndef LX_LOGFILE_H
+#define LX_LOGFILE_H
 
 #include <LX/base/YMutex.h>
 #include <LX/base/YTypes.h>
 
 #include <memory>
 
-namespace YBASE
+namespace LX
 {
     namespace FileUtil
     {

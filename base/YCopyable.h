@@ -1,7 +1,7 @@
-#ifndef YBASE_COPYABLE_H
-#define YBASE_COPYABLE_H
+#ifndef LX_COPYABLE_H
+#define LX_COPYABLE_H
 
-namespace YBASE
+namespace LX
 {
     class copyable
     {

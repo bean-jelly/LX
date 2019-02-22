@@ -31,7 +31,7 @@ __END_DECLS
 
 //以下两个类均不提供拷贝构造函数
 
-namespace YBASE
+namespace LX
 {
     class MutexLock : noncopyable
     {

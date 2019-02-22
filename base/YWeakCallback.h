@@ -1,10 +1,10 @@
-#ifndef YBASE_WEAKCALLBACK_H
-#define YBASE_WEAKCALLBACK_H
+#ifndef LX_WEAKCALLBACK_H
+#define LX_WEAKCALLBACK_H
 
 #include <functional>
 #include <memory>
 
-namespace YBASE
+namespace LX
 {
 #ifdef __GXX_EXPERIMENTAL_CXX0X__
     template<typename CLASS, typename...ARGS>
