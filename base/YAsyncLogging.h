@@ -50,10 +50,10 @@ namespace LX
         std::atomic<bool>       running_;
         std::string             basename_;
         off_t                   rollSize_;
-        LX::Thread           thread_;
-        LX::MutexLock        mutex_;
-        LX::CountDownLatch   latch_;
-        LX::Condition        cond_;
+        LX::Thread              thread_;
+        LX::CountDownLatch      latch_;
+        LX::MutexLock           mutex_;
+        LX::Condition           cond_;
         BufferPtr               currentBuffer_;     //当前缓冲区
         BufferPtr               nextBuffer_;        //预备缓冲
         BufferVector            buffers_;           //待写入文件的已填满的缓冲（供后端写入的buffer）
