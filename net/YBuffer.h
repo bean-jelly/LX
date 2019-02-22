@@ -265,17 +265,17 @@ namespace YBASE
 
             int64_t peekInt64() const
             {
-                assert(readableBytes() >= sizeof int64_t);
+                assert(readableBytes() >= sizeof(int64_t));
                 int64_t be64 = 0;
-                ::memcpy(&be64, peek(), sizeof be64);
+                ::memcpy(&be64, peek(), sizeof(be64));
                 return sockets::networkToHost64(be64);
             }
 
             int32_t peekInt32() const
             {
-                assert(readableBytes() >=sizeof int32_t);
+                assert(readableBytes() >=sizeof(int32_t));
                 int32_t be32 = 0;
-                ::memcpy(&be32, peek(), sizeof be32);
+                ::memcpy(&be32, peek(), sizeof(be32));
                 return sockets::networkToHost32(be32);
             }
 
@@ -283,7 +283,7 @@ namespace YBASE
             {
                 assert(readableBytes() >= sizeof(int16_t));
                 int16_t be16 = 0;
-                ::memcpy(&be16, peek(), sizeof be16);
+                ::memcpy(&be16, peek(), sizeof(be16));
                 return sockets::networkToHost16(be16);
             }
 
