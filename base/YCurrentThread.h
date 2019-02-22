@@ -3,7 +3,6 @@
 
 #include <LX/base/YTypes.h>
 #include <stdint.h>
-#include <LX/base/YLogging.h>
 
 /*
 进程pid: getpid()                 
@@ -27,7 +26,6 @@ namespace YBASE
 
         inline int tid()
         {
-	    LOG_INFO << "CurrentThread tid()";
             cacheTid();
             return t_cachedTid;
         }
