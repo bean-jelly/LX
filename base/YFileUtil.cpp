@@ -1,5 +1,5 @@
 #include <LX/base/YFileUtil.h>
-#include <LX/base/LYogging.h> // strerror_tl
+#include <LX/base/YLogging.h> // strerror_tl
 
 #include <assert.h>
 #include <errno.h>
