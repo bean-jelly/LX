@@ -4,7 +4,7 @@
 using namespace YBASE;
 using namespace YBASE::net;
 
-Poller::Poller(EventLoop* loop)
+Poller::Poller(EventLoop* loop) : ownerLoop_(loop)
 {
 
 }
