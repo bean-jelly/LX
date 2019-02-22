@@ -13,7 +13,7 @@
 #include <sys/resource.h>
 #include <sys/times.h>
 
-namespace muduo
+namespace LX
 {
     namespace detail
     {
