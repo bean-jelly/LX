@@ -129,7 +129,6 @@ using namespace YBASE;
 
 void CurrentThread::cacheTid()
 {
-    LOG_INFO << "CurrentThread::cacheTid()";
     if(t_cachedTid == 0)
     {
         t_cachedTid = detail::gettid();
