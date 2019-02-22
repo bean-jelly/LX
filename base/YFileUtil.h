@@ -18,7 +18,7 @@ namespace LX
             int readToString(int maxSize, String* content, int64_t* fileSize, int64_t* modifyTime, int64_t* createTime);
             int readToBuffer(int* size);
             const char* buffer() const {return buf_;}
-            static const int kBuffersize = 64*1024;
+            static const int kBufferSize = 64*1024;
         private:
             int fd_;
             int err_;
