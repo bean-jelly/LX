@@ -17,7 +17,10 @@ namespace LX
             : mutex_(),
             notEmpty_(mutex_), 
             notFull_(mutex_), 
-            queue_(maxSize){}
+            queue_(maxSize)
+        {
+            
+        }
 
         void put(const T& x)
         {
