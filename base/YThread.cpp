@@ -38,11 +38,11 @@ namespace YBASE
     {
         pid_t gettid()
         {
-            #ifndef __linux__
-            return static_cast<pid_t>(GetCurrentThreadId());
-            #else
+            //#ifndef __linux__
+            //return static_cast<pid_t>(GetCurrentThreadId());
+            //#else
             return static_cast<pid_t>(::syscall(SYS_gettid));
-            #endif
+            //#endif
         }
         
         //parent fork创建了子进程以后，但在fork返回之前在父进程的进程环境中调用的
@@ -129,6 +129,7 @@ using namespace YBASE;
 
 void CurrentThread::cacheTid()
 {
+    LOG_INFO << "CurrentThread::cacheTid()";
     if(t_cachedTid == 0)
     {
         t_cachedTid = detail::gettid();
