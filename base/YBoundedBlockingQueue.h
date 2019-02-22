@@ -14,7 +14,7 @@ namespace LX
     {
     public:
         explicit BoundedBLockingQueue(int maxSize)
-            :mutex_(),
+            : mutex_(),
             notEmpty_(mutex_), 
             notFull_(mutex_), 
             queue_(maxSize){}
@@ -69,7 +69,7 @@ namespace LX
             return queue_.capacity();
         }
     private:
-        MutexLock                   mutex_;
+        mutable MutexLock           mutex_;
         Condition                   notEmpty_;
         Condition                   notFull_;
         boost::circular_buffer<T>   queue_;
