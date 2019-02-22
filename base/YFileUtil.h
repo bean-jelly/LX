@@ -2,6 +2,7 @@
 #define LX_FILEUTIL_H
 
 #include <LX/base/YStringPiece.h>
+#include <LX/base/YNoncopyable.h>
 #include <sys/types.h>  // for off_t
 
 namespace LX
