@@ -5,16 +5,19 @@
 #include <LX/base/YMutex.h>
 
 #include <boost/circular_buffer.hpp>
-#include <boost/noncopyable.hpp>
 #include <assert.h>
 
 namespace LX
 {
     template<typename T>
-    class BoundedBlockingQueue : boost::noncopyable
+    class BoundedBlockingQueue : noncopyable
     {
     public:
-        explicit BoundedBLockingQueue(int maxSize):mutex_(), notEmpty_(mutex_), notFull_(mutex_), queue_(maxSize){}
+        explicit BoundedBLockingQueue(int maxSize)
+            :mutex_(),
+            notEmpty_(mutex_), 
+            notFull_(mutex_), 
+            queue_(maxSize){}
 
         void put(const T& x)
         {
