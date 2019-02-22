@@ -1,7 +1,7 @@
 #ifndef LX_FILEUTIL_H
 #define LX_FILEUTIL_H
 
-#include <muduo/base/StringPiece.h>
+#include <LX/base/YStringPiece.h>
 #include <sys/types.h>  // for off_t
 
 namespace LX
@@ -27,11 +27,11 @@ namespace LX
 
         template<typename String>
         int readFile(StringArg filename,
-             int maxSize,
-             String* content,
-             int64_t* fileSize = NULL,
-             int64_t* modifyTime = NULL,
-             int64_t* createTime = NULL)
+                    int maxSize,
+                    String* content,
+                    int64_t* fileSize = NULL,
+                    int64_t* modifyTime = NULL,
+                    int64_t* createTime = NULL)
         {
             ReadSmallFile file(filename);
             return file.readToString(maxSize, content, fileSize, modifyTime, createTime);
