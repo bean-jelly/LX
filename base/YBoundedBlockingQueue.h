@@ -13,7 +13,7 @@ namespace LX
     class BoundedBlockingQueue : noncopyable
     {
     public:
-        explicit BoundedBLockingQueue(int maxSize)
+        explicit BoundedBlockingQueue(int maxSize)
             : mutex_(),
             notEmpty_(mutex_), 
             notFull_(mutex_), 
