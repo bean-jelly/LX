@@ -10,7 +10,8 @@
 
 using namespace LX;
 
-FileUtil::AppendFile::AppendFile(StringArg filename): fp_(::fopen(filename.c_str(), "ae")),  // 'e' for O_CLOEXEC
+FileUtil::AppendFile::AppendFile(StringArg filename):
+ fp_(::fopen(filename.c_str(), "ae")),  // 'e' for O_CLOEXEC
     writtenBytes_(0)
 {
     assert(fp_);
@@ -170,15 +171,3 @@ template int FileUtil::ReadSmallFile::readToString(
     int maxSize,
     string* content,
     int64_t*, int64_t*, int64_t*);
-
-#ifndef MUDUO_STD_STRING
-template int FileUtil::readFile(StringArg filename,
-                                int maxSize,
-                                std::string* content,
-                                int64_t*, int64_t*, int64_t*);
-
-template int FileUtil::ReadSmallFile::readToString(
-    int maxSize,
-    std::string* content,
-    int64_t*, int64_t*, int64_t*);
-#endif
