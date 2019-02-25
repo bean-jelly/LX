@@ -34,8 +34,8 @@ void Exception::fillStackTrace()
 {
     const int len = 200;
     void* buffer[len];
-    int nptrs = ::backtrace(buffer, len);
-    char ** strings = ::backtrace_symbols(buffer, nptrs);
+    int nptrs = ::backtrace(buffer, len);                // backtrace 栈回溯，保存各个栈帧的地址
+    char ** strings = ::backtrace_symbols(buffer, nptrs);// backtrace_symbols 根据地址，转成相应的函数符号
     if(strings)
     {
         for(int i = 0; i < nptrs; i++)

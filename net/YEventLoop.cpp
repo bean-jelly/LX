@@ -75,9 +75,10 @@ EventLoop::EventLoop()
   {
     t_loopInThisThread = this;
   }
-  wakeupChannel_->setReadCallback(
-      std::bind(&EventLoop::handleRead, this));
-  // we are always reading the wakeupfd
+  //注册wakeupChannel_ 的回调函数为EventLoop::handleRead
+  wakeupChannel_->setReadCallback(std::bind(&EventLoop::handleRead, this));
+  //调用Channel::update()
+  //最后调用Poller::updataChannel()
   wakeupChannel_->enableReading();
 }
 
@@ -136,12 +137,16 @@ void EventLoop::quit()
   }
 }
 
+// 为了使IO线程在空闲时也能处理一些计算任务
+// 在I/O线程中执行某个回调函数，该函数可以跨线程调用
 void EventLoop::runInLoop(Functor cb)
 {
+  //如果是本线程调用的，立即执行函数
   if (isInLoopThread())
   {
     cb();
   }
+  //否则放在pendingFunctors_中,让IO线程处理
   else
   {
     queueInLoop(std::move(cb));
@@ -151,10 +156,12 @@ void EventLoop::runInLoop(Functor cb)
 void EventLoop::queueInLoop(Functor cb)
 {
   {
-  MutexLockGuard lock(mutex_);
-  pendingFunctors_.push_back(std::move(cb));
+    MutexLockGuard lock(mutex_);
+    pendingFunctors_.push_back(std::move(cb));
   }
 
+  //调用queueInLoop的线程不是当前IO线程时需要唤醒当前IO线程，才能及时执行doPendingFunctors()
+  //并且此时正在调用pending functor，需要唤醒当前IO线程
   if (!isInLoopThread() || callingPendingFunctors_)
   {
     wakeup();

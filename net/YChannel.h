@@ -69,6 +69,7 @@ namespace LX
             int             events_;    // 关注的事件
             int             revents_;   // poll/epoll返回的事件
             int             index_;     // 表示在poll的事件数组中的序号 used by Poller.
+                                        //表示某channel的状态（新创建，已关注，取消关注）used by EPollPoller. 
             bool            logHup_;    // 表示某channel的状态
 
             std::weak_ptr<void> tie_;

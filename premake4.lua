@@ -27,3 +27,7 @@ solution "lx"
         assert(os.mkdir(target))
         assert(os.execute('cp ' .. source .. ' ' .. target))
     end
+
+    configurations { "Debug", "Release" }
+    location(builddir)
+    includedirs(includedir)

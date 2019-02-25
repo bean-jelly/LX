@@ -41,6 +41,7 @@ EPollPoller::~EPollPoller()
 
 Timestamp EPollPoller::poll(int timeoutMs, ChannelList* activeChannels)
 {
+    //阻塞返回
     LOG_TRACE << "fd total count " << channels_.size();
     int numEvents = ::epoll_wait(epollfd_, &*events_.begin(), static_cast<int>(events_.size()), timeoutMs);
     int savedErrno = errno;
@@ -132,6 +133,8 @@ void EPollPoller::update(int operation, Channel* channel)
 {
     struct epoll_event event;
     bzero(&event, sizeof event);
+
+    //channel 和 channel.events_ 构造一个struct epoll_event
     event.events = channel->events();
     event.data.ptr = channel;
     int fd = channel->fd();

@@ -61,9 +61,10 @@ namespace LX
                 LX::CurrentThread::t_threadName = "main";
                 /*
                 pthread_atfork(void (*prepare)(void），void (*parent)(void）, void(*child)(void))
-                prepare在父进程fork创建子进程之前调用，这里可以获取父进程定义的所有锁；
-                child fork返回之前在子进程环境中调用，在这里unlock prepare获得的锁；
-                parent fork创建了子进程以后，但在fork返回之前在父进程的进程环境中调用的，在这里对prepare获得的锁进行解锁；
+                pthread_atfork()在fork()之前调用
+                prepare:在父进程fork创建子进程之前在父进程调用，这里可以获取父进程定义的所有锁；
+                child:fork返回之前在子进程环境中调用，在这里unlock prepare获得的锁；
+                parent:fork创建了子进程以后，但在fork返回之前在父进程的进程环境中调用的，在这里对prepare获得的锁进行解锁；
                 */
                 CurrentThread::tid();
                 pthread_atfork(NULL, NULL, &afterFork);

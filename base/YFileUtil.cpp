@@ -1,5 +1,5 @@
 #include <LX/base/YFileUtil.h>
-#include <LX/base/YLogging.h> // strerror_tl
+#include <LX/base/LYogging.h> // strerror_tl
 
 #include <assert.h>
 #include <errno.h>
@@ -10,8 +10,7 @@
 
 using namespace LX;
 
-FileUtil::AppendFile::AppendFile(StringArg filename):
- fp_(::fopen(filename.c_str(), "ae")),  // 'e' for O_CLOEXEC
+FileUtil::AppendFile::AppendFile(StringArg filename): fp_(::fopen(filename.c_str(), "ae")),  // 'e' for O_CLOEXEC
     writtenBytes_(0)
 {
     assert(fp_);
@@ -162,12 +161,18 @@ int FileUtil::ReadSmallFile::readToBuffer(int* size)
     return err;
 }
 
+template int FileUtil::readFile(StringArg filename, int maxSize, string* content, int64_t*, int64_t*, int64_t*);
+
+template int FileUtil::ReadSmallFile::readToString(int maxSize, string* content, int64_t*, int64_t*, int64_t*);
+
+#ifndef MUDUO_STD_STRING
 template int FileUtil::readFile(StringArg filename,
                                 int maxSize,
-                                string* content,
+                                std::string* content,
                                 int64_t*, int64_t*, int64_t*);
 
 template int FileUtil::ReadSmallFile::readToString(
     int maxSize,
-    string* content,
+    std::string* content,
     int64_t*, int64_t*, int64_t*);
+#endif

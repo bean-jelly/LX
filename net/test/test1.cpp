@@ -23,7 +23,7 @@ void print(const char *msg)
     printf("msg %s %s\n", Timestamp::now().toString().c_str(), msg);
     if (++cnt == 20)
     {
-        g_loop->quit();
+        g_loop->;
     }
 }
 
