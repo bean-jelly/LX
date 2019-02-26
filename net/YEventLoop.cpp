@@ -165,6 +165,7 @@ void EventLoop::queueInLoop(Functor cb)
 
   if (!isInLoopThread() || callingPendingFunctors_)
   {
+    LOG_TRACE << "queueInLoop " << this << " wakeup ";
     wakeup();
   }
 }
@@ -233,6 +234,7 @@ void EventLoop::abortNotInLoopThread()
 void EventLoop::wakeup()
 {
   uint64_t one = 1;
+  LOG_TRACE << "EventLoop::wakeup() writes " << one << " bytes instead of 8";
   ssize_t n = sockets::write(wakeupFd_, &one, sizeof one);
   if (n != sizeof one)
   {
