@@ -107,7 +107,7 @@ TimerQueue::TimerQueue(EventLoop* loop)
             timers_(),
             callingExpiredTimers_(false)
 {
-    LOG_DEBUG << "TimerQueue " << "timerfd_ = " << timerfd_ << " event = { " << timerfdChannel_->eventsToString() << " }";
+    LOG_DEBUG << "TimerQueue " << "timerfd_ = " << timerfd_ << " event = { " << timerfdChannel_.eventsToString() << " }";
     timerfdChannel_.setReadCallback(std::bind(&TimerQueue::handleRead, this));
     timerfdChannel_.enableReading();
 }
