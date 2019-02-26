@@ -75,7 +75,7 @@ EventLoop::EventLoop()
   {
     t_loopInThisThread = this;
   }
-  LOG_DEBUG << "EventLoop : wakeupChannel_->ReadCallback " << "wakeupFd_ = " << wakeupFd_ << " event = { " << wakeupChannel_.eventsToString() << " }";
+  LOG_DEBUG << "EventLoop : wakeupChannel_->ReadCallback " << "wakeupFd_ = " << wakeupFd_ << " event = { " << wakeupChannel_->eventsToString() << " }";
   //注册wakeupChannel_ 的回调函数为EventLoop::handleRead
   wakeupChannel_->setReadCallback(std::bind(&EventLoop::handleRead, this));
   //调用Channel::update()
