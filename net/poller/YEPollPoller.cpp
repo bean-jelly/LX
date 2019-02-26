@@ -107,6 +107,7 @@ void EPollPoller::updateChannel(Channel* channel)
             assert(channels_[fd] == channel);
         }
         channel->set_index(kAdded);
+        LOG_TRACE << "updateChannel " << " fd = " << fd << " event = { " << channel->eventsToString() << " }";
         update(EPOLL_CTL_ADD, channel);
     }
     else
