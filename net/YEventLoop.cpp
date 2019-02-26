@@ -118,6 +118,7 @@ void EventLoop::loop()
     }
     currentActiveChannel_ = NULL;
     eventHandling_ = false;
+    LOG_TRACE << "poll finish " << this << " prepare to doPendingFunctors ";
     doPendingFunctors();
   }
 
@@ -144,11 +145,13 @@ void EventLoop::runInLoop(Functor cb)
   //如果是本线程调用的，立即执行函数
   if (isInLoopThread())
   {
+    LOG_TRACE << "runInLoop " << this << " call function ";
     cb();
   }
   //否则放在pendingFunctors_中,让IO线程处理
   else
   {
+    LOG_TRACE << "runInLoop " << this << " queueInLoop ";
     queueInLoop(std::move(cb));
   }
 }
@@ -160,8 +163,14 @@ void EventLoop::queueInLoop(Functor cb)
     pendingFunctors_.push_back(std::move(cb));
   }
 
-  //调用queueInLoop的线程不是当前IO线程时需要唤醒当前IO线程，才能及时执行doPendingFunctors()
-  //并且此时正在调用pending functor，需要唤醒当前IO线程
+  // 调用queueInLoop的线程不是当前IO线程则需要唤醒当前IO线程，才能及时执行doPendingFunctors();
+
+  // 或者调用queueInLoop的线程是当前IO线程（比如在doPendingFunctors()中执行functors[i]() 时又调用了queueInLoop()）
+  // 并且此时正在调用pending functor，需要唤醒当前IO线程
+  // 因为在此时doPendingFunctors() 过程中又添加了任务，故循环回去poll的时候需要被唤醒返回，进而继续执行doPendingFunctors()
+
+  // 只有当前IO线程的事件回调中调用queueInLoop才不需要唤醒
+  // 即在handleEvent()中调用queueInLoop 不需要唤醒，因为接下来马上就会执行doPendingFunctors();
   if (!isInLoopThread() || callingPendingFunctors_)
   {
     wakeup();
@@ -249,14 +258,15 @@ void EventLoop::handleRead()
   }
 }
 
+// 该函数只会被当前IO线程调用
 void EventLoop::doPendingFunctors()
 {
   std::vector<Functor> functors;
   callingPendingFunctors_ = true;
 
   {
-  MutexLockGuard lock(mutex_);
-  functors.swap(pendingFunctors_);
+    MutexLockGuard lock(mutex_);
+    functors.swap(pendingFunctors_);
   }
 
   for (size_t i = 0; i < functors.size(); ++i)
