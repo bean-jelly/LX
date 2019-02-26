@@ -7,6 +7,7 @@ set(net_SRCS
     YPoller.cpp
     YSocketsOps.cpp
     YTcpConnection.cpp
+    YAcceptor.cpp
     YTimer.cpp
     YTimerQueue.cpp
     poller/YDefaultPoller.cpp
@@ -27,6 +28,7 @@ set(HEADERS
     YInetAddress.h
     YTcpConnection.h
     YTimerId.h
+    YAcceptor.h
   )
 
   install(FILES ${HEADERS} DESTINATION include/lx/net)
