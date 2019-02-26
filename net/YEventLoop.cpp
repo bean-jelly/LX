@@ -164,11 +164,11 @@ void EventLoop::queueInLoop(Functor cb)
   }
 
   //调用queueInLoop的线程不是当前IO线程则需要唤醒当前IO线程,才能及时执行doPendingFunctors();
-  //或者调用queueInLoop的线程是当前IO线程（比如在doPendingFunctors()中执行functors[i]()时又调用了queueInLoop()）
-  //并且此时正在调用pending functor，需要唤醒当前IO线程
-  //因为在此时doPendingFunctors() 过程中又添加了任务，故循环回去poll的时候需要被唤醒返回，进而继续执行doPendingFunctors()
+  //或者调用queueInLoop的线程是当前IO线程(比如在doPendingFunctors()中执行functors[i]()时又调用了queueInLoop())
+  //并且此时正在调用pending functor,需要唤醒当前IO线程
+  //因为在此时doPendingFunctors()过程中又添加了任务,故循环回去poll的时候需要被唤醒返回,进而继续执行doPendingFunctors()
   //只有当前IO线程的事件回调中调用queueInLoop才不需要唤醒
-  //即在handleEvent()中调用queueInLoop 不需要唤醒，因为接下来马上就会执行doPendingFunctors();
+  //即在handleEvent()中调用queueInLoop不需要唤醒,因为接下来马上就会执行doPendingFunctors()
   if (!isInLoopThread() || callingPendingFunctors_)
   {
     wakeup();
